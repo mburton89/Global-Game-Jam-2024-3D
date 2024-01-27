@@ -5,44 +5,24 @@ using UnityEngine;
 public class PropCollider : MonoBehaviour
 {
     GameObject ball;
+    public float propSize;
 
     private void Start()
     {
         ball = FindObjectOfType<BallMovement>().gameObject;
+        propSize = transform.localScale.magnitude;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ball && ball.GetComponent<BallMovement>().currentBallSize >= transform.localScale.magnitude)
+        if (ball && ball.GetComponent<BallMovement>().currentBallSize >= propSize)
         {
             GetComponent<Collider>().isTrigger = true;
         }
         else
         {
             GetComponent<Collider>().isTrigger = false;
-        }
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        //Check for a match with the specific tag on any GameObject that collides with your GameObject
-        if (collision.gameObject.tag == "Ratball")
-        {
-            //If the GameObject has the same tag as specified, output this message in the console
-            GetComponent<BoxCollider>().enabled = false;
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //Check for a match with the specific tag on any GameObject that collides with your GameObject
-        if (other.gameObject.tag == "Ratball")
-        {
-            //If the GameObject has the same tag as specified, output this message in the console
-            GetComponent<BoxCollider>().enabled = false;
-
-            other.GetComponent<SphereCollider>().radius += 0.01f;
         }
     }
 }
