@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/InputMenu.unity
+    guid: 9b3dca34983eed64881259a8f7e28552
+  - enabled: 1
+    path: Assets/Scenes/TiltControlsDemo.unity
+    guid: 9ba2c7963fb114947bb1dc4f540ceadd
+  - enabled: 1
+    path: Assets/Scenes/SwipeControlsDemo.unity
+    guid: 12327fa640064e946af64f161e6bc33c
   m_configObjects: {}
