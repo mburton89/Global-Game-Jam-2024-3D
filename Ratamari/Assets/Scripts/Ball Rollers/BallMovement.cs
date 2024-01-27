@@ -87,4 +87,13 @@ public class BallMovement : MonoBehaviour
             size += collision.transform.localScale.magnitude;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Prop") && other.transform.localScale.magnitude <= size)
+        {
+            other.transform.parent = transform;
+            size += other.transform.localScale.magnitude;
+        }
+    }
 }
