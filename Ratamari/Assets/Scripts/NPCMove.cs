@@ -8,8 +8,8 @@ public class NPCMove : MonoBehaviour
     private float teeterSpeed = 5;
 
 
-    private double hopHeight = .3;
-    private float hopSpeed = 5;
+    private double hopHeight = .1;
+    private float hopSpeed = 10;
 
     private float waddleDistance = 6;
     private float waddleSpeed = 2;
