@@ -688,8 +688,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Biggie C.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6a76b4bc97b31944afeb6f09df2eaad, type: 2}
+  m_sharedMaterial: {fileID: 5891886604560019102, guid: c6a76b4bc97b31944afeb6f09df2eaad,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1199,8 +1200,9 @@ MonoBehaviour:
   m_text: "When you hit the point of no return, that\u2019s the moment it truly becomes
     a journey. If you can still turn back, it\u2019s not really a journey."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6a76b4bc97b31944afeb6f09df2eaad, type: 2}
+  m_sharedMaterial: {fileID: 5891886604560019102, guid: c6a76b4bc97b31944afeb6f09df2eaad,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
