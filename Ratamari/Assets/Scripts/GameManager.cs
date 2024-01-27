@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public float ballSize;
     public BallMovement Ball;
 
+    public float roadBlockPieceExplosionForce;
+    public float roadBlockPieceTorque;
+
     private void Awake()
     {
         if(Instance == null)
