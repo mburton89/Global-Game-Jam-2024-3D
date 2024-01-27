@@ -10,6 +10,8 @@ public class BallMovement : MonoBehaviour
     public float initialSpeed; // how much speed the ball has when launching off the hill
     public float jumpForce;
 
+    float lastVelocity;
+
     public int maxJumps;
     public int currentJumps;
     public Transform groundCheck;
@@ -42,6 +44,8 @@ public class BallMovement : MonoBehaviour
         Jump();
 
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput / 25), rb.velocity.y, rb.velocity.z);
+
+        lastVelocity = rb.velocity.z;
     }
 
     public void Jump()
@@ -85,6 +89,16 @@ public class BallMovement : MonoBehaviour
         {
             collision.transform.parent = transform;
             size += collision.transform.localScale.magnitude;
+        }
+
+        if(collision.gameObject.CompareTag("Prop") && collision.transform.localScale.magnitude > size)
+        {
+            if (lastVelocity >= 10)
+            {
+                size -= rb.velocity.z / 10;
+                rb.GetComponent<SphereCollider>().radius = rb.velocity.z / 10;
+                print("Crashed into larger prop!");
+            }
         }
     }
 
