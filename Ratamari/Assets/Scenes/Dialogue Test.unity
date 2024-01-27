@@ -794,6 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 889341909}
   dialogueText: {fileID: 1403229577}
+  characterPortrait: {fileID: 1303301230}
   animator: {fileID: 1262124218}
 --- !u!4 &979041226
 Transform:
@@ -958,6 +959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Rat Boi
+    portrait: {fileID: 1303301230}
     sentences:
     - I love cheese. Mmmmm all the cheese. Cheeeseee. Factory of cheese.
     - Gimme cheese
@@ -1119,7 +1121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dc4f3caf6011464409844505e346e12d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

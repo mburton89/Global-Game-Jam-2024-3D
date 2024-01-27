@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
+    public Image characterPortrait;
+
     public Animator animator;
 
     private Queue<string> sentences;
@@ -52,6 +54,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
+            //Make type speed changeable in editor
             dialogueText.text += letter;
             yield return null;
         }
