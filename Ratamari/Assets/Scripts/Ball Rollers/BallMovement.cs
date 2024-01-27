@@ -9,10 +9,10 @@ public class BallMovement : MonoBehaviour
     public float maxMoveSpeed;
     public float initialSpeed; // how much speed the ball has when launching off the hill
     public float jumpForce;
+    public float currentZVelocity;
 
     public int maxJumps;
     public int currentJumps;
-    public Transform groundCheck;
     public LayerMask groundLayer;
 
     public bool isGrounded;
@@ -40,6 +40,7 @@ public class BallMovement : MonoBehaviour
         Jump();
 
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput / 25), rb.velocity.y, rb.velocity.z);
+        currentZVelocity = rb.velocity.z;
     }
 
     public void Jump()
@@ -52,20 +53,18 @@ public class BallMovement : MonoBehaviour
                 currentJumps--;
             }
         }
-        CheckIfGrounded();
+
+        if (rb.velocity.y <= 0)
+        {
+            CheckIfGrounded();
+        }
     }
 
     public void CheckIfGrounded()
     {
         // draw an imaginary line from the player (ball) center downwards. if the line touches an object on the ground layer, consider ourselves grounded
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, GetComponent<SphereCollider>().radius + 0.5f);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, GetComponent<SphereCollider>().radius);
         ResetJumps();
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, Vector3.down);
     }
 
     public void ResetJumps()
@@ -75,5 +74,13 @@ public class BallMovement : MonoBehaviour
             print("wa");
             currentJumps = maxJumps;
         }
+    }
+
+
+    // debug function: draws line from ball's center downwards, visualizes ground check
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, new(transform.position.x, transform.position.y - (transform.localScale.y / 2), transform.position.z));
     }
 }
