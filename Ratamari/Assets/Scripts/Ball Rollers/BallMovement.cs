@@ -22,8 +22,8 @@ public class BallMovement : MonoBehaviour
     Rigidbody rb;
 
     private float size = 1;
-    private float ballScale = GameManager.Instance.ballSize;
-    private float ballRadius = GameManager.Instance.ballSize;
+    //private float ballScale = GameManager.Instance.ballSize;
+    //private float ballRadius = GameManager.Instance.ballSize;
 
 
     // Start is called before the first frame update
@@ -76,7 +76,7 @@ public class BallMovement : MonoBehaviour
     {
         if (isGrounded && currentJumps != maxJumps)
         {
-            print("wa");
+            //print("wa");
             currentJumps = maxJumps;
         }
     }
