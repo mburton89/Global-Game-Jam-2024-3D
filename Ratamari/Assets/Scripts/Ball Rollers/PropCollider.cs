@@ -27,6 +27,8 @@ public class PropCollider : MonoBehaviour
         {
             //If the GameObject has the same tag as specified, output this message in the console
             GetComponent<BoxCollider>().enabled = false;
+
+            other.GetComponent<SphereCollider>().radius += 0.01f;
         }
     }
 }
