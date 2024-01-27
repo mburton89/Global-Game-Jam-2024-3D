@@ -21,6 +21,8 @@ public class BallMovement : MonoBehaviour
     float moveInput;
     Rigidbody rb;
 
+    private float size = 1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +76,15 @@ public class BallMovement : MonoBehaviour
         {
             print("wa");
             currentJumps = maxJumps;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Prop") && collision.transform.localScale.magnitude <= size)
+        {
+            collision.transform.parent = transform;
+            size += collision.transform.localScale.magnitude;
         }
     }
 }
