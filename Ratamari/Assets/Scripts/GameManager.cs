@@ -5,6 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    private float initialScale = 2f;
+    private float initialRadius = 0.5f;
+    public float ballSize;
+    public BallMovement Ball;
 
     private void Awake()
     {
@@ -19,11 +23,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+        Ball = FindObjectOfType<BallMovement>();
     }
 
     // Update is called once per frame

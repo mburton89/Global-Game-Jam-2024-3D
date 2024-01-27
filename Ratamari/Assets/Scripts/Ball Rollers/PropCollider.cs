@@ -4,6 +4,24 @@ using UnityEngine;
 
 public class PropCollider : MonoBehaviour
 {
+    public float sizetoAdd = 0.1f;
+    private Transform ballTransform;
+    private SphereCollider ballCollider;
+    private float currentBallScaleX;
+    private float currentBallScaleY;
+    private float currentBallScaleZ;
+    private float currentBallRadius;
+
+    private void Start()
+    {
+        ballTransform = GetComponent<Transform>();
+        ballCollider = GetComponent<SphereCollider>();
+        currentBallScaleX = ballTransform.localScale.x;
+        currentBallScaleY = ballTransform.localScale.y;
+        currentBallScaleZ = ballTransform.localScale.z;
+        currentBallRadius = ballCollider.radius;
+    }
+
     // Update is called once per frame
     void Update()
     {
