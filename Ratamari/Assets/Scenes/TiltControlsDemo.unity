@@ -1992,7 +1992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379f75ce81aa0524195b026fbd2fc95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiltSpeed: 6
+  tiltSpeed: 20
   jumpForce: 5
   tiltTextX: {fileID: 1878708154}
   tiltTextY: {fileID: 1854197611}
@@ -2001,6 +2001,7 @@ MonoBehaviour:
   accelerationTextX: {fileID: 1177090789}
   accelerationTextY: {fileID: 46418501}
   accelerationTextZ: {fileID: 1693467085}
+  maxXVelocity: 12
 --- !u!1 &1686196899
 GameObject:
   m_ObjectHideFlags: 0

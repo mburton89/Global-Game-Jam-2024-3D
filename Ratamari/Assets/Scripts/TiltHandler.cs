@@ -24,6 +24,8 @@ public class TiltHandler : MonoBehaviour
     public TextMeshProUGUI accelerationTextY;
     public TextMeshProUGUI accelerationTextZ;
 
+    public float maxXVelocity;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -50,6 +52,14 @@ public class TiltHandler : MonoBehaviour
         // Adjust velocity based on tilt
         float xVelocity = Input.acceleration.x * tiltSpeed;
 
+        if (xVelocity > maxXVelocity)
+        { 
+            xVelocity = maxXVelocity;
+        }
+        else if (xVelocity < -maxXVelocity)
+        {
+            xVelocity = -maxXVelocity;
+        }
 
         // Apply the velocity to the Rigidbody
         rb.velocity = new Vector3(xVelocity, rb.velocity.y, rb.velocity.z);
