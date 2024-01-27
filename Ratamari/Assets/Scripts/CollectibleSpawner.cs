@@ -11,18 +11,14 @@ public class CollectibleSpawner : MonoBehaviour
     public float yPos;
 
     public float numberOfCollectiblesToSpawn;
-
     public List<GameObject> collectiblePrefabs;
-
     public Transform collectibleParent;
-
     public float angleToTiltParent;
 
     void Start()
     {
         SpawnItems();
     }
-
 
     public void SpawnItems()
     {

@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class PropCollider : MonoBehaviour
 {
-    public float sizetoAdd;
-/*    private Transform ballTransform;
-    private SphereCollider ballCollider;
-    private float currentBallScaleX;
-    private float currentBallScaleY;
-    private float currentBallScaleZ;
-    private float currentBallRadius;
-*/
-/*    private void Start()
+    GameObject ball;
+
+    private void Start()
     {
-        ballTransform = GetComponent<Transform>();
-        ballCollider = GetComponent<SphereCollider>();
-        currentBallScaleX = ballTransform.localScale.x;
-        currentBallScaleY = ballTransform.localScale.y;
-        currentBallScaleZ = ballTransform.localScale.z;
-        currentBallRadius = ballCollider.radius;
+        ball = FindObjectOfType<BallMovement>().gameObject;
     }
-*/
+
     // Update is called once per frame
     void Update()
     {
-
+        if (ball && ball.GetComponent<BallMovement>().currentBallSize >= transform.localScale.magnitude)
+        {
+            GetComponent<Collider>().isTrigger = true;
+        }
+        else
+        {
+            GetComponent<Collider>().isTrigger = false;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -46,9 +42,7 @@ public class PropCollider : MonoBehaviour
             //If the GameObject has the same tag as specified, output this message in the console
             GetComponent<BoxCollider>().enabled = false;
 
-            other.GetComponent<SphereCollider>().radius += sizetoAdd;
-
-            RunningRat.Instance.MoveUp(sizetoAdd);
+            other.GetComponent<SphereCollider>().radius += 0.01f;
         }
     }
 }
