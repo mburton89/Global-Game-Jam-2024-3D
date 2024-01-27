@@ -36,6 +36,7 @@ public class BallMovement : MonoBehaviour
     void Update()
     {
         moveInput = Input.GetAxis("Horizontal");
+        //moveInput = 0;
         if (Input.GetKeyDown(KeyCode.W))
         {
             rb.AddForce(Vector3.forward * initialSpeed, ForceMode.Impulse);
@@ -43,7 +44,7 @@ public class BallMovement : MonoBehaviour
 
         Jump();
 
-        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput / 25), rb.velocity.y, rb.velocity.z);
+        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput), rb.velocity.y, rb.velocity.z);
     }
 
     public void Jump()
