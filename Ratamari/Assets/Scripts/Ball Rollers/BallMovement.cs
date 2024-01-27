@@ -83,17 +83,22 @@ public class BallMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         // pick up props to get bigger
-        if (collision.gameObject.CompareTag("Prop") && collision.transform.localScale.magnitude <= currentBallSize)
+        if (other.gameObject.CompareTag("Prop") && other.transform.localScale.magnitude <= currentBallSize)
         {
-            collision.transform.parent = transform;
+            other.transform.parent = transform;
             currentBallSize += 0.01f;
+            rb.GetComponent<SphereCollider>().radius += 0.01f;
+
             cam.GetComponent<CameraFollow>().followPositionOffset.y += 0.01f;
             cam.GetComponent<CameraFollow>().followPositionOffset.z -= 0.01f;
         }
+    }
 
+    void OnCollisionEnter(Collision collision)
+    {
         // crash into too-big stuff to get smaller
         if (collision.gameObject.CompareTag("Prop") && collision.transform.localScale.magnitude > currentBallSize)
         {
@@ -103,6 +108,7 @@ public class BallMovement : MonoBehaviour
 
                 currentBallSize -= (lastZVelocity / 100);
                 rb.GetComponent<SphereCollider>().radius -= (lastZVelocity / 100);
+
                 cam.GetComponent<CameraFollow>().followPositionOffset.y -= 0.01f;
                 cam.GetComponent<CameraFollow>().followPositionOffset.z += 0.01f;
 
@@ -111,24 +117,13 @@ public class BallMovement : MonoBehaviour
                 {
                     currentBallSize = initialBallRadius * 2;
                     rb.GetComponent<SphereCollider>().radius = initialBallRadius;
+
                     cam.GetComponent<CameraFollow>().followPositionOffset.y = 3;
                     cam.GetComponent<CameraFollow>().followPositionOffset.z = -6;
 
                     print("Ball size was limited to what it started at!");
                 }
             }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // pick up props to get bigger (if props are triggers)
-        if (other.gameObject.CompareTag("Prop") && other.transform.localScale.magnitude <= currentBallSize)
-        {
-            other.transform.parent = transform;
-            currentBallSize += 0.01f;
-            cam.GetComponent<CameraFollow>().followPositionOffset.y += 0.01f;
-            cam.GetComponent<CameraFollow>().followPositionOffset.z -= 0.01f;
         }
     }
 

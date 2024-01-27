@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8916638268012784327}
   - component: {fileID: 1275409516926357965}
   - component: {fileID: 3936631115416155493}
-  - component: {fileID: 7407119744489510660}
+  - component: {fileID: -9155835232527662604}
   m_Layer: 0
   m_Name: Collectible - Red
   m_TagString: Prop
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2273661107012234933}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 32.7, z: -216}
-  m_LocalScale: {x: 0.52, y: 0.52, z: 0.52}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7407119744489510660
+--- !u!114 &-9155835232527662604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

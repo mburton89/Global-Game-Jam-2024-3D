@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5827172540701773354}
   - component: {fileID: 7649996879638772753}
   - component: {fileID: 5584451737998009119}
-  - component: {fileID: 2829333811505014609}
+  - component: {fileID: 3320475385134651343}
   m_Layer: 0
   m_Name: Collectible - Blue
   m_TagString: Prop
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2829333811505014609
+--- !u!114 &3320475385134651343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
