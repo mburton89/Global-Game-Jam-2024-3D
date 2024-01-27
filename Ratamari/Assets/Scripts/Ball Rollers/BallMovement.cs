@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -86,31 +87,47 @@ public class BallMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // pick up props to get bigger
-        if (other.gameObject.CompareTag("Prop") && other.transform.localScale.magnitude <= currentBallSize)
+        if (other.gameObject.CompareTag("Prop") && other.GetComponent<PropCollider>().propSize <= currentBallSize)
         {
             other.transform.parent = transform;
-            currentBallSize += 0.01f;
-            rb.GetComponent<SphereCollider>().radius += 0.01f;
+            currentBallSize += other.GetComponent<PropCollider>().propSize / 25;
+            rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propSize / 25;
 
-            cam.GetComponent<CameraFollow>().followPositionOffset.y += 0.01f;
-            cam.GetComponent<CameraFollow>().followPositionOffset.z -= 0.01f;
+            cam.GetComponent<CameraFollow>().followPositionOffset.y += other.GetComponent<PropCollider>().propSize / 25;
+            cam.GetComponent<CameraFollow>().followPositionOffset.z -= other.GetComponent<PropCollider>().propSize / 25;
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         // crash into too-big stuff to get smaller
-        if (collision.gameObject.CompareTag("Prop") && collision.transform.localScale.magnitude > currentBallSize)
+        if (collision.gameObject.CompareTag("Prop") && collision.gameObject.GetComponent<PropCollider>().propSize > currentBallSize)
         {
             if (lastZVelocity >= 10)
             {
                 print("Crashed into larger prop! Removed " + lastZVelocity / 100 + " from its size!");
 
-                currentBallSize -= (lastZVelocity / 100);
-                rb.GetComponent<SphereCollider>().radius -= (lastZVelocity / 100);
+                currentBallSize -= lastZVelocity / 100;
+                rb.GetComponent<SphereCollider>().radius -= lastZVelocity / 100;
 
-                cam.GetComponent<CameraFollow>().followPositionOffset.y -= 0.01f;
-                cam.GetComponent<CameraFollow>().followPositionOffset.z += 0.01f;
+                cam.GetComponent<CameraFollow>().followPositionOffset.y -= lastZVelocity / 100;
+                cam.GetComponent<CameraFollow>().followPositionOffset.z += lastZVelocity / 100;
+
+                // kick off props from ball on crash based on how impactful the crash was
+                float totalPropSize = 0;
+                foreach (PropCollider prop in FindObjectsOfType<PropCollider>())
+                {
+                    if (prop.transform.parent == this)
+                    {
+                        print("Kicking off a prop!");
+
+                        totalPropSize += prop.GetComponent<PropCollider>().propSize / 25;
+                        if (totalPropSize <= lastZVelocity)
+                        {
+                            StartCoroutine(KickOffProps(prop.gameObject));
+                        }
+                    }
+                }
 
                 // prevent ball from getting toooo small
                 if (currentBallSize < initialBallRadius * 2)
@@ -118,13 +135,30 @@ public class BallMovement : MonoBehaviour
                     currentBallSize = initialBallRadius * 2;
                     rb.GetComponent<SphereCollider>().radius = initialBallRadius;
 
-                    cam.GetComponent<CameraFollow>().followPositionOffset.y = 3;
-                    cam.GetComponent<CameraFollow>().followPositionOffset.z = -6;
+                    cam.GetComponent<CameraFollow>().followPositionOffset.y = cam.GetComponent<CameraFollow>().initialFollowPositionOffset.y;
+                    cam.GetComponent<CameraFollow>().followPositionOffset.z = cam.GetComponent<CameraFollow>().initialFollowPositionOffset.z;
+
+                    // kick off all props from ball
+                    foreach (PropCollider prop in FindObjectsOfType<PropCollider>())
+                    {
+                        if (prop.transform.parent == this)
+                        {
+                            StartCoroutine(KickOffProps(prop.gameObject));
+                        }
+                    }
 
                     print("Ball size was limited to what it started at!");
                 }
             }
         }
+    }
+
+    IEnumerator KickOffProps(GameObject prop)
+    {
+        prop.transform.SetParent(prop.transform.root);
+        prop.GetComponent<Rigidbody>().AddExplosionForce(5, transform.position, GetComponent<SphereCollider>().radius);
+
+        yield return null;
     }
 
     // debug function: draws line from ball's center downwards, visualizes ground check
