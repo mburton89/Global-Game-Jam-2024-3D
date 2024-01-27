@@ -71,7 +71,6 @@ public class BallMovement : MonoBehaviour
     {
         if (isGrounded && currentJumps != maxJumps)
         {
-            print("wa");
             currentJumps = maxJumps;
         }
     }
