@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 666937838739903265}
   - component: {fileID: -7914948022295827332}
   m_Layer: 0
-  m_Name: Medium - Person 7
+  m_Name: Medium - 'v' Man
   m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +201,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2b9dee7cab6441c4382dd903ec61ef1f, type: 2}
+      objectReference: {fileID: 2100000, guid: 7b558f816e87c0b4dbd350ea3da72423, type: 2}
     - target: {fileID: 919132149155446097, guid: 619ced22dac1bdb49b699eeb11e0ae31,
         type: 3}
       propertyPath: m_Name
