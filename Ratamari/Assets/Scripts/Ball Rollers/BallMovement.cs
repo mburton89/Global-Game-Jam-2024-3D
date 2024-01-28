@@ -110,39 +110,44 @@ public class BallMovement : MonoBehaviour
         {
             if (lastZVelocity >= 10)
             {
-                print("Crashed into larger prop! Removed " + lastZVelocity / 1000 + " from its size, losing " + Mathf.FloorToInt(lastZVelocity / 10) + " props!");
-
-                currentBallSize -= lastZVelocity / 1000;
-                rb.GetComponent<SphereCollider>().radius -= lastZVelocity / 1000;
-
-                cam.GetComponent<CameraFollow>().followPositionOffset.y -= lastZVelocity / 1000;
-                cam.GetComponent<CameraFollow>().followPositionOffset.z += lastZVelocity / 1000;
-
                 // kick off props from ball on crash based on how impactful the crash was
-                int totalPropsOnBall = 0;
                 float totalPropSize = 0;
+                List<GameObject> totalPropsOnBall = new();
 
-                // first, get number of props on ball
+                // first, get the actual props currently on ball
                 for (var i = 0; i < transform.childCount; i++)
                 {
-                    if (transform.GetChild(i).GetComponent<PropCollider>())
+                    if (transform.GetChild(i).GetComponent<PropCollider>() && !transform.GetChild(i).GetComponent<PropCollider>().isRat)
                     {
-                        totalPropsOnBall++;
+                        totalPropsOnBall.Add(transform.GetChild(i).gameObject);
                     }
                 }
+                
+                // and get the count to compare with num of props needed for level up
+                float currentCountOfPropsOnBall = totalPropsOnBall.Count;
 
                 // then, kick off props if it is appropriate to do so (if ball is "small" or if ball has more props than num needed to level up)
-                for (var i = 0; i < transform.childCount; i++)
+                for (var i = 0; i < totalPropsOnBall.Count; i++)
                 {
-                    totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propValue;
-                    if (totalPropSize <= lastZVelocity / 1000 && !transform.GetChild(i).GetComponent<PropCollider>().isRat && (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Small || totalPropsOnBall > SizeManager.Instance.numberOfItemsNeededToCollectBeforeLevelUp))
+                    if (!totalPropsOnBall[i].GetComponent<PropCollider>().isRat && totalPropSize <= Mathf.Floor(lastZVelocity) / 1000 && (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Small || currentCountOfPropsOnBall > SizeManager.Instance.numberOfItemsNeededToCollectBeforeLevelUp))
                     {
-                        print("Kicking off a prop! " + transform.GetChild(i).gameObject.name);
-                        StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
-                        totalPropsOnBall--;
+                        print("Kicking off a prop! " + totalPropsOnBall[i].name);
+
+                        totalPropSize += totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+
+                        currentBallSize -= totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+                        rb.GetComponent<SphereCollider>().radius -= totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+
+                        cam.GetComponent<CameraFollow>().followPositionOffset.y -= totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+                        cam.GetComponent<CameraFollow>().followPositionOffset.z += totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+
+                        StartCoroutine(KickOffProps(totalPropsOnBall[i]));
                         SizeManager.Instance.HandleItemsLost(1);
+                        currentCountOfPropsOnBall--;
                     }
                 }
+
+                print("Crashed into larger prop! Removed " + Mathf.Floor(lastZVelocity) / 1000 + " from its size, losing " + Mathf.FloorToInt(lastZVelocity / 10) + " props!");
 
                 // prevent ball from getting toooo small
                 if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Small && currentBallSize < initialBallRadius * 2)
@@ -158,6 +163,7 @@ public class BallMovement : MonoBehaviour
                     {
                         print("Kicking off all props!");
                         StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
+                        SizeManager.Instance.HandleItemsLost(totalPropsOnBall.Count);
                     }
 
                     print("Ball size was limited to what it started at!");
