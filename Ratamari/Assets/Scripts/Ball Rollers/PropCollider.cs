@@ -6,6 +6,8 @@ public class PropCollider : MonoBehaviour
 {
     GameObject ball;
 
+    public float sizeToAdd;
+
     private void Start()
     {
         ball = FindObjectOfType<BallMovement>().gameObject;
@@ -43,6 +45,7 @@ public class PropCollider : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
 
             other.GetComponent<SphereCollider>().radius += 0.01f;
+
         }
     }
 }

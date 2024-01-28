@@ -94,6 +94,9 @@ public class BallMovement : MonoBehaviour
 
             cam.GetComponent<CameraFollow>().followPositionOffset.y += 0.01f;
             cam.GetComponent<CameraFollow>().followPositionOffset.z -= 0.01f;
+
+            SizeIndicator.Instance.AddToSize(other.GetComponent<PropCollider>().sizeToAdd);
+            RunningRat.Instance.MoveUp(other.GetComponent<PropCollider>().sizeToAdd);
         }
     }
 
