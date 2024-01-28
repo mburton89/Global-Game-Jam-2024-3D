@@ -11,6 +11,7 @@ public class RunningRat : MonoBehaviour
     
     public Animator animator;
 
+    public float distanceToMoveVertically;
 
     void Awake()
     {
@@ -23,8 +24,13 @@ public class RunningRat : MonoBehaviour
         animator.speed = ball.GetComponent<Rigidbody>().velocity.magnitude / 20f;
     }
 
-    public void MoveUp(float distance)
+    public void MoveUp()
     {
-        yOffset += distance;
+        yOffset += distanceToMoveVertically;
+    }
+
+    public void MoveDown()
+    {
+        yOffset += distanceToMoveVertically;
     }
 }

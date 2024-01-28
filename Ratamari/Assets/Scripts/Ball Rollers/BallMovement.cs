@@ -123,6 +123,7 @@ public class BallMovement : MonoBehaviour
 
                 for (var i = 0; i < transform.childCount; i++)
                 {
+
                     print("Kicking off a prop!" + transform.GetChild(i).gameObject.name);
                     totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propSize;
                     if (totalPropSize <= lastZVelocity)
@@ -131,6 +132,7 @@ public class BallMovement : MonoBehaviour
                     }
 
                     SizeManager.Instance.HandleItemsLost(1);
+                    
                 }
 
                 // prevent ball from getting toooo small
@@ -157,12 +159,19 @@ public class BallMovement : MonoBehaviour
 
     IEnumerator KickOffProps(GameObject prop)
     {
-        prop.transform.SetParent(prop.transform.root);
+        if (prop.GetComponent<PropCollider>().isRat)
+        {
+            yield return null;
+        }
+        else
+        {
+            prop.transform.SetParent(prop.transform.root);
 
-        yield return new WaitForSeconds(2);
-        Destroy(prop);
+            yield return new WaitForSeconds(2);
+            Destroy(prop);
 
-        yield return null;
+            yield return null;
+        }
     }
 
     // debug function: draws line from ball's center downwards, visualizes ground check

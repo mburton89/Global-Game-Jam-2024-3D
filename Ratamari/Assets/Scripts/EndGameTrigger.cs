@@ -9,6 +9,9 @@ public class EndGameTrigger : MonoBehaviour
         if (collision.gameObject.GetComponent<BallMovement>())
         {
             EndGameMenu.Instance.Activate();
+
+            SoundManager.Instance.PlaySound(SoundManager.SoundEffect.FartSound);
+
         }
     }
 }
