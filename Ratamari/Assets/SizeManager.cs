@@ -71,7 +71,7 @@ public class SizeManager : MonoBehaviour
                     SoundManager.Instance.PlaySound(SoundManager.SoundEffect.StartGameSound);
                 }
             }
-            else if (currentBallSize == BallSize.Large)
+            else if (currentBallSize == BallSize.Large && !achievedMaxSize)
             {
                 sizeLabel.SetText("XL");
                 achievedMaxSize = true;
