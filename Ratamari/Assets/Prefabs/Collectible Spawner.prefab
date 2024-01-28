@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &371054817201236721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3553712500263761309}
+  - component: {fileID: 8864299184871948567}
+  m_Layer: 0
+  m_Name: Collectible Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3553712500263761309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371054817201236721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8864299184871948567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371054817201236721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b67f89e73e20148b9263e4cf01d75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -15
+  maxX: 15
+  minZ: -1600
+  maxZ: -850
+  yPos: 582
+  numberOfCollectiblesToSpawn: 400
+  collectiblePrefabs:
+  - {fileID: 6027798717642810342, guid: 1d3d6aaaf49014f4bad4881a4feaa5d7, type: 3}
+  - {fileID: 90388293461594437, guid: 52f7694e02f03094b8bd6f063d20198b, type: 3}
+  - {fileID: 6511580949881817191, guid: 0af07b0c44e293242bbb99c897f56a10, type: 3}
+  - {fileID: 6511580949881817191, guid: 997ad7ded973185488513a871d51bda0, type: 3}
+  - {fileID: 9160417497418741624, guid: ec60872b53b052349b61a4e040e9f267, type: 3}
+  - {fileID: 3027201203225660417, guid: 26e5077d9ac143f45b74185870a52e26, type: 3}
+  - {fileID: 2273661107012234933, guid: 29995499d75642c429073ba35a8e7728, type: 3}
+  - {fileID: 9160417497418741624, guid: ec60872b53b052349b61a4e040e9f267, type: 3}
+  - {fileID: 3027201203225660417, guid: 26e5077d9ac143f45b74185870a52e26, type: 3}
+  - {fileID: 2273661107012234933, guid: 29995499d75642c429073ba35a8e7728, type: 3}
+  - {fileID: 9160417497418741624, guid: ec60872b53b052349b61a4e040e9f267, type: 3}
+  - {fileID: 3027201203225660417, guid: 26e5077d9ac143f45b74185870a52e26, type: 3}
+  - {fileID: 2273661107012234933, guid: 29995499d75642c429073ba35a8e7728, type: 3}
+  - {fileID: 9160417497418741624, guid: ec60872b53b052349b61a4e040e9f267, type: 3}
+  - {fileID: 3027201203225660417, guid: 26e5077d9ac143f45b74185870a52e26, type: 3}
+  - {fileID: 2273661107012234933, guid: 29995499d75642c429073ba35a8e7728, type: 3}
+  - {fileID: 9160417497418741624, guid: ec60872b53b052349b61a4e040e9f267, type: 3}
+  - {fileID: 3027201203225660417, guid: 26e5077d9ac143f45b74185870a52e26, type: 3}
+  - {fileID: 2273661107012234933, guid: 29995499d75642c429073ba35a8e7728, type: 3}
+  - {fileID: 9160417497418741624, guid: ec60872b53b052349b61a4e040e9f267, type: 3}
+  - {fileID: 3027201203225660417, guid: 26e5077d9ac143f45b74185870a52e26, type: 3}
+  - {fileID: 2273661107012234933, guid: 29995499d75642c429073ba35a8e7728, type: 3}
+  - {fileID: 6511580949881817191, guid: c9356e9373fffce4cb2e4a11e07602a2, type: 3}
+  - {fileID: 6511580949881817191, guid: d47f1eefd1006dc43baba48ceb3621a5, type: 3}
+  - {fileID: 6511580949881817191, guid: 9d1d9142c3bc79b439b0a44ca01fa282, type: 3}
+  - {fileID: 6511580949881817191, guid: 2c6030ea67e9e884084bc5766970d521, type: 3}
+  - {fileID: 6511580949881817191, guid: d00bbc46faa315540bb9441e13b6eb86, type: 3}
+  - {fileID: 6511580949881817191, guid: 3e20ce8912a747b4bbf387867c4498a3, type: 3}
+  - {fileID: 6511580949881817191, guid: 5dde81c7975076444a3c73b19110ebbe, type: 3}
+  - {fileID: 6511580949881817191, guid: fec334a9281db3944927aa516a3491d9, type: 3}
+  - {fileID: 6511580949881817191, guid: 4d60eab9b9e99a140951ba14c8557508, type: 3}
+  collectibleParent: {fileID: 0}
+  angleToTiltParent: 20

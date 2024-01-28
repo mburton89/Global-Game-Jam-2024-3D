@@ -54,6 +54,11 @@ public class SizeManager : MonoBehaviour
                 }
 
                 numberOfItemsNeededToCollectBeforeLevelUp *= 2;
+
+                foreach (GrannyRag rag in FindObjectsOfType<GrannyRag>())
+                {
+                    rag.DisableColliders();
+                }
             }
             else if (currentBallSize == BallSize.Medium)
             {
@@ -84,6 +89,8 @@ public class SizeManager : MonoBehaviour
 
     public void HandleItemsLost(int itemsLost)
     {
+        print("Prop was removed from ball!");
+
         SoundManager.Instance.PlaySound(SoundManager.SoundEffect.FartSound);
 
         itemsCollectedForLevelUp -= itemsLost;
