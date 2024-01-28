@@ -154,6 +154,14 @@ public class BallMovement : MonoBehaviour
                     print("Ball size was limited to what it started at!");
                 }
             }
+
+            if (collision.gameObject.GetComponent<Rigidbody>())
+            {
+                collision.gameObject.GetComponent<NPCMove>().enabled = false;
+                collision.gameObject.GetComponent<Rigidbody>().useGravity = true;
+                collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100 * rb.velocity.z);
+            }
         }
     }
 
