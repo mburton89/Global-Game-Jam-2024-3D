@@ -47,15 +47,6 @@ public class PropCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-/*        if (ball && ball.GetComponent<BallMovement>().currentBallSize >= transform.localScale.magnitude)
-        {
-            collider.isTrigger = true;
-        }
-        else
-        {
-            collider.isTrigger = false;
-        }*/
-
         if (size == Size.Small)
         {
             collider.isTrigger = true;

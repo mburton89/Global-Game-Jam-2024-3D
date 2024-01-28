@@ -40,8 +40,8 @@ public class NPCMove : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, initialRotation * teeterRotation, Time.deltaTime * teeterSpeed);
 
         // Hopping
-        float verticalMovement = (float)(Mathf.Sin(Time.time * hopSpeed) * hopHeight);
-        transform.position = initialPosition + new Vector3(transform.position.x, verticalMovement, transform.position.z);
+        //float verticalMovement = (float)(Mathf.Sin(Time.time * hopSpeed) * hopHeight);
+        //transform.position = initialPosition + new Vector3(transform.position.x, verticalMovement, transform.position.z);
 
         // Waddling
         Vector3 waddleDirection = isWaddlingRight ? Vector3.right : Vector3.left;
@@ -55,10 +55,10 @@ public class NPCMove : MonoBehaviour
         }
 
         // Change hop direction when reaching the peak of the hop
-        if (Mathf.Approximately(verticalMovement, (float)hopHeight) || Mathf.Approximately(verticalMovement, (float)-hopHeight))
+/*        if (Mathf.Approximately(verticalMovement, (float)hopHeight) || Mathf.Approximately(verticalMovement, (float)-hopHeight))
         {
             isGoingUp = !isGoingUp;
-        }
+        }*/
     }
 }
 
