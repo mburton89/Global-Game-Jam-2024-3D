@@ -11372,10 +11372,19 @@ MonoBehaviour:
   yPos: 582
   numberOfCollectiblesToSpawn: 400
   collectiblePrefabs:
+  - {fileID: 6027798717642810342, guid: 1d3d6aaaf49014f4bad4881a4feaa5d7, type: 3}
   - {fileID: 90388293461594437, guid: af4199d88f2eda9459174ee8f4851488, type: 3}
   - {fileID: 6511580949881817191, guid: d6f85596b09c8df4c95ef0ae1572d38e, type: 3}
   - {fileID: 6511580949881817191, guid: d6f85596b09c8df4c95ef0ae1572d38e, type: 3}
   - {fileID: 6511580949881817191, guid: d6f85596b09c8df4c95ef0ae1572d38e, type: 3}
+  - {fileID: 6511580949881817191, guid: d6f85596b09c8df4c95ef0ae1572d38e, type: 3}
+  - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
+  - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
+  - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
+  - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
+  - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
+  - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
+  - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
   - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
   - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
   - {fileID: 2273661107012234933, guid: c287706cc4ec85b4fb057803a1638a9a, type: 3}
@@ -18360,6 +18369,7 @@ MonoBehaviour:
   ball: {fileID: 1214782496}
   yOffset: 2
   animator: {fileID: 246984269}
+  distanceToMoveVertically: 0
 --- !u!23 &1759145314
 MeshRenderer:
   m_ObjectHideFlags: 0
