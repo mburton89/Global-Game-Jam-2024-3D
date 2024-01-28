@@ -87,15 +87,15 @@ public class BallMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // pick up props to get bigger
-        if (other.gameObject.CompareTag("Prop") && other.GetComponent<PropCollider>().propSize <= currentBallSize && !other.GetComponent<PropCollider>().pickedUp)
+        if (other.gameObject.CompareTag("Prop") && other.transform.localScale.magnitude <= currentBallSize && !other.GetComponent<PropCollider>().pickedUp)
         {
             other.transform.parent = transform;
             other.GetComponent<PropCollider>().pickedUp = true;
-            currentBallSize += other.GetComponent<PropCollider>().propSize / 25;
-            rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propSize / 25;
+            currentBallSize += other.GetComponent<PropCollider>().propSize;
+            rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propSize;
 
-            cam.GetComponent<CameraFollow>().followPositionOffset.y += other.GetComponent<PropCollider>().propSize / 25;
-            cam.GetComponent<CameraFollow>().followPositionOffset.z -= other.GetComponent<PropCollider>().propSize / 25;
+            cam.GetComponent<CameraFollow>().followPositionOffset.y += other.GetComponent<PropCollider>().propSize;
+            cam.GetComponent<CameraFollow>().followPositionOffset.z -= other.GetComponent<PropCollider>().propSize;
         }
     }
 
@@ -120,7 +120,7 @@ public class BallMovement : MonoBehaviour
                 for (var i = 0; i < transform.childCount; i++)
                 {
                     print("Kicking off a prop!");
-                    totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propSize / 25;
+                    totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propSize;
                     if (totalPropSize <= lastZVelocity)
                     {
                         StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
