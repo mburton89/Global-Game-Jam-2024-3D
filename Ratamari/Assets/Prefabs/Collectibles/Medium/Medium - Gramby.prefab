@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 8943859514440317955}
   - component: {fileID: 7256595038330878123}
   - component: {fileID: 666937838739903265}
-  - component: {fileID: -7457416486974290742}
+  - component: {fileID: -1774333176803411424}
   - component: {fileID: -7914948022295827332}
-  - component: {fileID: 736354838296681522}
+  - component: {fileID: -2322813899068589672}
   m_Layer: 0
-  m_Name: Medium - Person 10
+  m_Name: Medium - Gramby
   m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-7457416486974290742
+--- !u!54 &-1774333176803411424
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +152,7 @@ MonoBehaviour:
   pickedUp: 0
   isRat: 0
   size: 1
---- !u!114 &736354838296681522
+--- !u!114 &-2322813899068589672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,7 +241,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4e5151f91985d4e4ab5048578f95bce7, type: 2}
+      objectReference: {fileID: 2100000, guid: d24f5c280615c2940bb221d0ae4993c6, type: 2}
     - target: {fileID: 919132149155446097, guid: 619ced22dac1bdb49b699eeb11e0ae31,
         type: 3}
       propertyPath: m_Name
