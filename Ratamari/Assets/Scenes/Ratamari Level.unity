@@ -11491,7 +11491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660adca7473996045b9af83d1b2ae0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1074433994}
   maxMoveSpeed: 10
   initialSpeed: 5
   jumpForce: 5
