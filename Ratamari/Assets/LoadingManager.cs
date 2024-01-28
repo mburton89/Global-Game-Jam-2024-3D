@@ -5,11 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadingManager : MonoBehaviour
 {
-    public Animator transition;
-
     public string sceneToLoad;
-
-    public float transitionTime = 1f;
 
     public void Start()
     {
@@ -18,18 +14,6 @@ public class LoadingManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        StartCoroutine(LoadScene());
-    }
-
-    IEnumerator LoadScene()
-    {
-        if (!string.IsNullOrEmpty(sceneToLoad))
-        {
-            transition.SetTrigger("Start");
-
-            yield return new WaitForSeconds(transitionTime);
-
-            SceneManager.LoadScene(sceneToLoad);
-        }
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

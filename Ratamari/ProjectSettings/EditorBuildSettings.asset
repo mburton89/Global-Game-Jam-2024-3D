@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Build Scenes/MainMenu.unity
     guid: 2c4db4216947ab94280137ac11f17cac
   - enabled: 1
-    path: Assets/Scenes/Ragdoll Setup.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Ratamari Level 0.unity
+    guid: 10bc7746f9a88b04284e8874126c085e
   m_configObjects: {}
