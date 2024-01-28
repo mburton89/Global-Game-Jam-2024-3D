@@ -39,6 +39,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] List<AudioSource> roadBlockSounds;
     int roadBlockSoundIndex;
 
+    [SerializeField] List<AudioSource> musicTracks;
+    int musicSoundIndex;
+
     public enum SoundEffect
     {
         ObstacleHit,
@@ -50,7 +53,8 @@ public class SoundManager : MonoBehaviour
         FartSound,
         JumpSound,
         CarHornSound,
-        RoadBlockSound
+        RoadBlockSound,
+        musicTracks
     }
 
     private void Awake()
@@ -64,6 +68,16 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        PlayMusic(SoundEffect.musicTracks);
+    }
+
+    public void PlayMusic(SoundEffect soundEffect)
+    {
+        AudioSource audioSourceToPlay;
     }
 
     public void PlaySound(SoundEffect soundEffect)
