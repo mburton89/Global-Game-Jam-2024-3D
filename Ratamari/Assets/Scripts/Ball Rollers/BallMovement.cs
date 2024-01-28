@@ -45,9 +45,9 @@ public class BallMovement : MonoBehaviour
             rb.AddForce(Vector3.forward * initialSpeed, ForceMode.Impulse);
         }
 
-        Jump();
+        //Jump();
 
-        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput / 2), rb.velocity.y, rb.velocity.z);
+        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput / 1.5f), rb.velocity.y, rb.velocity.z);
         currentZVelocity = rb.velocity.z;
         lastZVelocity = rb.velocity.z;
     }
@@ -87,22 +87,26 @@ public class BallMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // pick up props to get bigger
-        if (other.gameObject.CompareTag("Prop") && other.GetComponent<PropCollider>().propSize <= currentBallSize && !other.GetComponent<PropCollider>().pickedUp)
+        if (other.gameObject.CompareTag("Prop") && !other.GetComponent<PropCollider>().pickedUp)
         {
+            if (!CheckIfCanPickUp(other.GetComponent<PropCollider>())) return;
+
             other.transform.parent = transform;
             other.GetComponent<PropCollider>().pickedUp = true;
-            currentBallSize += other.GetComponent<PropCollider>().propSize / 25;
-            rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propSize / 25;
+            currentBallSize += other.GetComponent<PropCollider>().propSize;
+            rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propSize;
 
-            cam.GetComponent<CameraFollow>().followPositionOffset.y += other.GetComponent<PropCollider>().propSize / 25;
-            cam.GetComponent<CameraFollow>().followPositionOffset.z -= other.GetComponent<PropCollider>().propSize / 25;
+            cam.GetComponent<CameraFollow>().followPositionOffset.y += other.GetComponent<PropCollider>().propSize;
+            cam.GetComponent<CameraFollow>().followPositionOffset.z -= other.GetComponent<PropCollider>().propSize;
+
+            SizeManager.Instance.HandleItemCollected();
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         // crash into too-big stuff to get smaller
-        if (collision.gameObject.CompareTag("Prop") && collision.gameObject.GetComponent<PropCollider>().propSize > currentBallSize)
+        if (collision.gameObject.CompareTag("Prop"))
         {
             if (lastZVelocity >= 10)
             {
@@ -119,12 +123,14 @@ public class BallMovement : MonoBehaviour
 
                 for (var i = 0; i < transform.childCount; i++)
                 {
-                    print("Kicking off a prop!");
-                    totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propSize / 25;
+                    print("Kicking off a prop!" + transform.GetChild(i).gameObject.name);
+                    totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propSize;
                     if (totalPropSize <= lastZVelocity)
                     {
                         StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
                     }
+
+                    SizeManager.Instance.HandleItemsLost(1);
                 }
 
                 // prevent ball from getting toooo small
@@ -164,5 +170,35 @@ public class BallMovement : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, new(transform.position.x, transform.position.y - (GetComponent<SphereCollider>().radius * 2) - 0.05f, transform.position.z));
+    }
+
+    bool CheckIfCanPickUp(PropCollider prop)
+    {
+        if (prop.size == PropCollider.Size.Medium)
+        {
+            if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Medium || SizeManager.Instance.currentBallSize == SizeManager.BallSize.Large)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (prop.size == PropCollider.Size.Large)
+        {
+            if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Large)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return true;
+        }
     }
 }
