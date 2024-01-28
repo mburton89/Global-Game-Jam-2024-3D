@@ -10,8 +10,21 @@ public class PropCollider : MonoBehaviour
     public int propSizeTier;
     public bool pickedUp;
 
+    Collider collider;
+
+    public enum Size
+    { 
+        Small,
+        Medium,
+        Large,
+    }
+
+    public Size size;
+
     private void Start()
     {
+        collider = GetComponent<Collider>();
+
         ball = FindObjectOfType<BallMovement>().gameObject;
         if (transform.localScale.magnitude >= 0.5f && transform.localScale.magnitude < 1.24f)
         {
@@ -33,13 +46,40 @@ public class PropCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ball && ball.GetComponent<BallMovement>().currentBallSize >= transform.localScale.magnitude)
+/*        if (ball && ball.GetComponent<BallMovement>().currentBallSize >= transform.localScale.magnitude)
         {
-            GetComponent<Collider>().isTrigger = true;
+            collider.isTrigger = true;
         }
         else
         {
-            GetComponent<Collider>().isTrigger = false;
+            collider.isTrigger = false;
+        }*/
+
+        if (size == Size.Small)
+        {
+            collider.isTrigger = true;
+        }
+        else if (size == Size.Medium)
+        {
+            if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Medium || SizeManager.Instance.currentBallSize == SizeManager.BallSize.Large)
+            {
+                collider.isTrigger = true;
+            }
+            else 
+            { 
+                collider.isTrigger = false; 
+            }
+        }
+        else if (size == Size.Large)
+        {
+            if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Large)
+            {
+                collider.isTrigger = true;
+            }
+            else
+            {
+                collider.isTrigger = false;
+            }
         }
     }
 }
