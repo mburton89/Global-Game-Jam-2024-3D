@@ -12,6 +12,7 @@ public class PropCollider : MonoBehaviour
 
     Collider collider;
 
+    public bool isRat;
     public enum Size
     { 
         Small,

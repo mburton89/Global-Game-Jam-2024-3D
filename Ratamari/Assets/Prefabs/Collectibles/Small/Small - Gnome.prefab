@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38e9d2ca667b2bb469404d956a72e1a6,
         type: 3}
       propertyPath: m_Name
-      value: Gnome Variant
+      value: Small - Gnome
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38e9d2ca667b2bb469404d956a72e1a6,
         type: 3}
@@ -149,3 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fd22cd315ec1c4ebaba7f328d45645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  propSize: 0
+  propSizeTier: 0
+  pickedUp: 0
+  size: 0

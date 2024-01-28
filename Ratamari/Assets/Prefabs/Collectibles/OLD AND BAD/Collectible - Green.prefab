@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7256595038330878123}
   - component: {fileID: 666937838739903265}
   - component: {fileID: 394848116298760161}
+  - component: {fileID: 8015665568372222505}
   m_Layer: 0
   m_Name: Collectible - Green
   m_TagString: Prop
@@ -118,4 +119,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fd22cd315ec1c4ebaba7f328d45645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizetoAdd: 0.05
+  propSize: 0
+  propSizeTier: 0
+  pickedUp: 0
+  size: 0
+--- !u!114 &8015665568372222505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511580949881817191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72fd22cd315ec1c4ebaba7f328d45645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propSize: 0
+  propSizeTier: 0
+  pickedUp: 0
+  size: 0
