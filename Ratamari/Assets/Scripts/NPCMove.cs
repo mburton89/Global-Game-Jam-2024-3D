@@ -11,13 +11,14 @@ public class NPCMove : MonoBehaviour
     private double hopHeight = .1;
     private float hopSpeed = 10;
 
-    private float waddleDistance = 6;
-    private float waddleSpeed = 2;
+    private float waddleDistance;
+    private float waddleSpeed;
+    private bool isWaddlingRight;
 
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private bool isGoingUp = true;
-    private bool isWaddlingRight = true;
+    //private bool isWaddlingRight = true;
 
 
     // Start is called before the first frame update
@@ -25,6 +26,10 @@ public class NPCMove : MonoBehaviour
     {
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+
+        waddleDistance = Random.Range(2, 8);
+        waddleSpeed = Random.Range(1, 6);
+        isWaddlingRight = Random.value > .5;
     }
 
     // Update is called once per frame
@@ -40,8 +45,8 @@ public class NPCMove : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, initialRotation * teeterRotation, Time.deltaTime * teeterSpeed);
 
         // Hopping
-        float verticalMovement = (float)(Mathf.Sin(Time.time * hopSpeed) * hopHeight);
-        transform.position = initialPosition + new Vector3(transform.position.x, verticalMovement, transform.position.z);
+        //float verticalMovement = (float)(Mathf.Sin(Time.time * hopSpeed) * hopHeight);
+        //transform.position = initialPosition + new Vector3(transform.position.x, verticalMovement, transform.position.z);
 
         // Waddling
         Vector3 waddleDirection = isWaddlingRight ? Vector3.right : Vector3.left;
@@ -55,10 +60,10 @@ public class NPCMove : MonoBehaviour
         }
 
         // Change hop direction when reaching the peak of the hop
-        if (Mathf.Approximately(verticalMovement, (float)hopHeight) || Mathf.Approximately(verticalMovement, (float)-hopHeight))
+/*        if (Mathf.Approximately(verticalMovement, (float)hopHeight) || Mathf.Approximately(verticalMovement, (float)-hopHeight))
         {
             isGoingUp = !isGoingUp;
-        }
+        }*/
     }
 }
 

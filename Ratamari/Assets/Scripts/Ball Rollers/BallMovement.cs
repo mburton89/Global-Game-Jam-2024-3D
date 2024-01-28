@@ -93,11 +93,11 @@ public class BallMovement : MonoBehaviour
 
             other.transform.parent = transform;
             other.GetComponent<PropCollider>().pickedUp = true;
-            currentBallSize += other.GetComponent<PropCollider>().propSize;
-            rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propSize;
+            currentBallSize += other.GetComponent<PropCollider>().propValue;
+            rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propValue;
 
-            cam.GetComponent<CameraFollow>().followPositionOffset.y += other.GetComponent<PropCollider>().propSize;
-            cam.GetComponent<CameraFollow>().followPositionOffset.z -= other.GetComponent<PropCollider>().propSize;
+            cam.GetComponent<CameraFollow>().followPositionOffset.y += other.GetComponent<PropCollider>().propValue;
+            cam.GetComponent<CameraFollow>().followPositionOffset.z -= other.GetComponent<PropCollider>().propValue;
 
             SizeManager.Instance.HandleItemCollected();
         }
@@ -110,33 +110,47 @@ public class BallMovement : MonoBehaviour
         {
             if (lastZVelocity >= 10)
             {
-                print("Crashed into larger prop! Removed " + lastZVelocity / 100 + " from its size!");
-
-                currentBallSize -= lastZVelocity / 100;
-                rb.GetComponent<SphereCollider>().radius -= lastZVelocity / 100;
-
-                cam.GetComponent<CameraFollow>().followPositionOffset.y -= lastZVelocity / 100;
-                cam.GetComponent<CameraFollow>().followPositionOffset.z += lastZVelocity / 100;
-
                 // kick off props from ball on crash based on how impactful the crash was
                 float totalPropSize = 0;
+                List<GameObject> totalPropsOnBall = new();
 
+                // first, get the actual props currently on ball
                 for (var i = 0; i < transform.childCount; i++)
                 {
-
-                    print("Kicking off a prop!" + transform.GetChild(i).gameObject.name);
-                    totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propSize;
-                    if (totalPropSize <= lastZVelocity)
+                    if (transform.GetChild(i).GetComponent<PropCollider>() && !transform.GetChild(i).GetComponent<PropCollider>().isRat)
                     {
-                        StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
+                        totalPropsOnBall.Add(transform.GetChild(i).gameObject);
                     }
+                }
+                
+                // and get the count to compare with num of props needed for level up
+                float currentCountOfPropsOnBall = totalPropsOnBall.Count;
 
-                    SizeManager.Instance.HandleItemsLost(1);
-                    
+                // then, kick off props if it is appropriate to do so (if ball is "small" or if ball has more props than num needed to level up)
+                for (var i = 0; i < totalPropsOnBall.Count; i++)
+                {
+                    if (!totalPropsOnBall[i].GetComponent<PropCollider>().isRat && totalPropSize <= Mathf.Floor(lastZVelocity) / 1000 && (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Small || currentCountOfPropsOnBall > SizeManager.Instance.numberOfItemsNeededToCollectBeforeLevelUp))
+                    {
+                        print("Kicking off a prop! " + totalPropsOnBall[i].name);
+
+                        totalPropSize += totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+
+                        currentBallSize -= totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+                        rb.GetComponent<SphereCollider>().radius -= totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+
+                        cam.GetComponent<CameraFollow>().followPositionOffset.y -= totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+                        cam.GetComponent<CameraFollow>().followPositionOffset.z += totalPropsOnBall[i].GetComponent<PropCollider>().propValue;
+
+                        StartCoroutine(KickOffProps(totalPropsOnBall[i]));
+                        SizeManager.Instance.HandleItemsLost(1);
+                        currentCountOfPropsOnBall--;
+                    }
                 }
 
+                print("Crashed into larger prop! Removed " + Mathf.Floor(lastZVelocity) / 1000 + " from its size, losing " + Mathf.FloorToInt(lastZVelocity / 10) + " props!");
+
                 // prevent ball from getting toooo small
-                if (currentBallSize < initialBallRadius * 2)
+                if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Small && currentBallSize < initialBallRadius * 2)
                 {
                     currentBallSize = initialBallRadius * 2;
                     rb.GetComponent<SphereCollider>().radius = initialBallRadius;
@@ -149,10 +163,29 @@ public class BallMovement : MonoBehaviour
                     {
                         print("Kicking off all props!");
                         StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
+                        SizeManager.Instance.HandleItemsLost(totalPropsOnBall.Count);
                     }
 
                     print("Ball size was limited to what it started at!");
                 }
+            }
+
+            if (collision.gameObject.GetComponent<Rigidbody>())
+            {
+                print(collision.gameObject.name);
+
+                if (collision.gameObject.GetComponent<NPCMove>())
+                { 
+                    collision.gameObject.GetComponent<NPCMove>().enabled = false;
+                }
+                collision.gameObject.GetComponent<Rigidbody>().useGravity = true;
+                collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 1000 * rb.velocity.z);
+
+/*                if (collision.gameObject.GetComponent<GrannyRag>())
+                {
+                    collision.gameObject.GetComponent<GrannyRag>().EnableRagdoll();
+                }*/
             }
         }
     }
