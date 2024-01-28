@@ -7,10 +7,11 @@ public class CameraFollow : MonoBehaviour
     Camera cam;
     public Transform followTarget;
     public Vector3 followPositionOffset;
+    [HideInInspector] public Vector3 initialFollowPositionOffset;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        initialFollowPositionOffset = followPositionOffset;
         cam = GetComponent<Camera>();
     }
 
