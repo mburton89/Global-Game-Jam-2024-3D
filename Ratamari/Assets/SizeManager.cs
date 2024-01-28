@@ -78,6 +78,8 @@ public class SizeManager : MonoBehaviour
         }   
 
         radialFill.fillAmount = (float)itemsCollectedForLevelUp / (float)numberOfItemsNeededToCollectBeforeLevelUp;
+
+        RunningRat.Instance.MoveUp();
     }
 
     public void HandleItemsLost(int itemsLost)
@@ -86,5 +88,7 @@ public class SizeManager : MonoBehaviour
 
         itemsCollectedForLevelUp -= itemsLost;
         radialFill.fillAmount = (float)itemsCollectedForLevelUp / (float)numberOfItemsNeededToCollectBeforeLevelUp;
+
+        RunningRat.Instance.MoveDown();
     }
 }
