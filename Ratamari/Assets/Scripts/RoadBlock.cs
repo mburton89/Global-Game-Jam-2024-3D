@@ -14,6 +14,11 @@ public class RoadBlock : MonoBehaviour
             {
                 roadBlockPieces[i].Activate();
             }
+
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlaySound(SoundManager.SoundEffect.RoadBlockSound);
+            }
         }
     }
 }
