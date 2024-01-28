@@ -93,11 +93,11 @@ public class BallMovement : MonoBehaviour
 
             other.transform.parent = transform;
             other.GetComponent<PropCollider>().pickedUp = true;
-            currentBallSize += other.GetComponent<PropCollider>().propSize;
-            rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propSize;
+            currentBallSize += other.GetComponent<PropCollider>().propValue;
+            rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propValue;
 
-            cam.GetComponent<CameraFollow>().followPositionOffset.y += other.GetComponent<PropCollider>().propSize;
-            cam.GetComponent<CameraFollow>().followPositionOffset.z -= other.GetComponent<PropCollider>().propSize;
+            cam.GetComponent<CameraFollow>().followPositionOffset.y += other.GetComponent<PropCollider>().propValue;
+            cam.GetComponent<CameraFollow>().followPositionOffset.z -= other.GetComponent<PropCollider>().propValue;
 
             SizeManager.Instance.HandleItemCollected();
         }
@@ -110,33 +110,42 @@ public class BallMovement : MonoBehaviour
         {
             if (lastZVelocity >= 10)
             {
-                print("Crashed into larger prop! Removed " + lastZVelocity / 100 + " from its size!");
+                print("Crashed into larger prop! Removed " + lastZVelocity / 1000 + " from its size, losing " + Mathf.FloorToInt(lastZVelocity / 10) + " props!");
 
-                currentBallSize -= lastZVelocity / 100;
-                rb.GetComponent<SphereCollider>().radius -= lastZVelocity / 100;
+                currentBallSize -= lastZVelocity / 1000;
+                rb.GetComponent<SphereCollider>().radius -= lastZVelocity / 1000;
 
-                cam.GetComponent<CameraFollow>().followPositionOffset.y -= lastZVelocity / 100;
-                cam.GetComponent<CameraFollow>().followPositionOffset.z += lastZVelocity / 100;
+                cam.GetComponent<CameraFollow>().followPositionOffset.y -= lastZVelocity / 1000;
+                cam.GetComponent<CameraFollow>().followPositionOffset.z += lastZVelocity / 1000;
 
                 // kick off props from ball on crash based on how impactful the crash was
+                int totalPropsOnBall = 0;
                 float totalPropSize = 0;
 
+                // first, get number of props on ball
                 for (var i = 0; i < transform.childCount; i++)
                 {
-
-                    print("Kicking off a prop!" + transform.GetChild(i).gameObject.name);
-                    totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propSize;
-                    if (totalPropSize <= lastZVelocity)
+                    if (transform.GetChild(i).GetComponent<PropCollider>())
                     {
-                        StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
+                        totalPropsOnBall++;
                     }
+                }
 
-                    SizeManager.Instance.HandleItemsLost(1);
-                    
+                // then, kick off props if it is appropriate to do so (if ball is "small" or if ball has more props than num needed to level up)
+                for (var i = 0; i < transform.childCount; i++)
+                {
+                    totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propValue;
+                    if (totalPropSize <= lastZVelocity / 1000 && !transform.GetChild(i).GetComponent<PropCollider>().isRat && (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Small || totalPropsOnBall > SizeManager.Instance.numberOfItemsNeededToCollectBeforeLevelUp))
+                    {
+                        print("Kicking off a prop! " + transform.GetChild(i).gameObject.name);
+                        StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
+                        totalPropsOnBall--;
+                        SizeManager.Instance.HandleItemsLost(1);
+                    }
                 }
 
                 // prevent ball from getting toooo small
-                if (currentBallSize < initialBallRadius * 2)
+                if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Small && currentBallSize < initialBallRadius * 2)
                 {
                     currentBallSize = initialBallRadius * 2;
                     rb.GetComponent<SphereCollider>().radius = initialBallRadius;
