@@ -89,6 +89,8 @@ public class SizeManager : MonoBehaviour
 
     public void HandleItemsLost(int itemsLost)
     {
+        print("Prop was removed from ball!");
+
         SoundManager.Instance.PlaySound(SoundManager.SoundEffect.FartSound);
 
         itemsCollectedForLevelUp -= itemsLost;

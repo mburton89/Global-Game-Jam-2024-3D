@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Rat
+  - Prop
+  - Ratball
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -41,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1616321697
     locked: 0

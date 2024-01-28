@@ -6,11 +6,10 @@ using UnityEngine;
 public class PropCollider : MonoBehaviour
 {
     GameObject ball;
-    public float propSize;
-    public int propSizeTier;
+    public float propValue;
     public bool pickedUp;
 
-    Collider collider;
+    Collider col;
 
     public bool isRat;
     public enum Size
@@ -24,23 +23,20 @@ public class PropCollider : MonoBehaviour
 
     private void Start()
     {
-        collider = GetComponent<Collider>();
+        col = GetComponent<Collider>();
 
         ball = FindObjectOfType<BallMovement>().gameObject;
-        if (transform.localScale.magnitude >= 0.5f && transform.localScale.magnitude < 1.24f)
+        if (size == Size.Small)
         {
-            propSizeTier = 1;
-            propSize = 0.0125f;
+            propValue = 0.01f;
         }
-        if (transform.localScale.magnitude >= 1.25f && transform.localScale.magnitude < 1.99f)
+        if (size == Size.Medium)
         {
-            propSizeTier = 2;
-            propSize = 0.025f;
+            propValue = 0.02f;
         }
-        if (transform.localScale.magnitude >= 2f && transform.localScale.magnitude < 2.75f)
+        if (size == Size.Large)
         {
-            propSizeTier = 3;
-            propSize = 0.0375f;
+            propValue = 0.03f;
         }
     }
 
@@ -49,28 +45,28 @@ public class PropCollider : MonoBehaviour
     {
         if (size == Size.Small)
         {
-            collider.isTrigger = true;
+            col.isTrigger = true;
         }
         else if (size == Size.Medium)
         {
             if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Medium || SizeManager.Instance.currentBallSize == SizeManager.BallSize.Large)
             {
-                collider.isTrigger = true;
+                col.isTrigger = true;
             }
             else 
             { 
-                collider.isTrigger = false; 
+                col.isTrigger = false; 
             }
         }
         else if (size == Size.Large)
         {
             if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Large)
             {
-                collider.isTrigger = true;
+                col.isTrigger = true;
             }
             else
             {
-                collider.isTrigger = false;
+                col.isTrigger = false;
             }
         }
     }
