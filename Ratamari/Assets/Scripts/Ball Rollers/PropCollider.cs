@@ -6,6 +6,7 @@ public class PropCollider : MonoBehaviour
 {
     GameObject ball;
     public float propSize;
+    public bool pickedUp;
 
     private void Start()
     {

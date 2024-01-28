@@ -87,9 +87,10 @@ public class BallMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // pick up props to get bigger
-        if (other.gameObject.CompareTag("Prop") && other.GetComponent<PropCollider>().propSize <= currentBallSize)
+        if (other.gameObject.CompareTag("Prop") && other.GetComponent<PropCollider>().propSize <= currentBallSize && !other.GetComponent<PropCollider>().pickedUp)
         {
             other.transform.parent = transform;
+            other.GetComponent<PropCollider>().pickedUp = true;
             currentBallSize += other.GetComponent<PropCollider>().propSize / 25;
             rb.GetComponent<SphereCollider>().radius += other.GetComponent<PropCollider>().propSize / 25;
 
@@ -115,17 +116,14 @@ public class BallMovement : MonoBehaviour
 
                 // kick off props from ball on crash based on how impactful the crash was
                 float totalPropSize = 0;
-                foreach (PropCollider prop in FindObjectsOfType<PropCollider>())
-                {
-                    if (prop.transform.parent == this)
-                    {
-                        print("Kicking off a prop!");
 
-                        totalPropSize += prop.GetComponent<PropCollider>().propSize / 25;
-                        if (totalPropSize <= lastZVelocity)
-                        {
-                            StartCoroutine(KickOffProps(prop.gameObject));
-                        }
+                for (var i = 0; i < transform.childCount; i++)
+                {
+                    print("Kicking off a prop!");
+                    totalPropSize += transform.GetChild(i).GetComponent<PropCollider>().propSize / 25;
+                    if (totalPropSize <= lastZVelocity)
+                    {
+                        StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
                     }
                 }
 
@@ -139,12 +137,10 @@ public class BallMovement : MonoBehaviour
                     cam.GetComponent<CameraFollow>().followPositionOffset.z = cam.GetComponent<CameraFollow>().initialFollowPositionOffset.z;
 
                     // kick off all props from ball
-                    foreach (PropCollider prop in FindObjectsOfType<PropCollider>())
+                    for (var i = 0; i < transform.childCount; i++)
                     {
-                        if (prop.transform.parent == this)
-                        {
-                            StartCoroutine(KickOffProps(prop.gameObject));
-                        }
+                        print("Kicking off all props!");
+                        StartCoroutine(KickOffProps(transform.GetChild(i).gameObject));
                     }
 
                     print("Ball size was limited to what it started at!");
@@ -156,7 +152,9 @@ public class BallMovement : MonoBehaviour
     IEnumerator KickOffProps(GameObject prop)
     {
         prop.transform.SetParent(prop.transform.root);
-        prop.GetComponent<Rigidbody>().AddExplosionForce(5, transform.position, GetComponent<SphereCollider>().radius);
+
+        yield return new WaitForSeconds(2);
+        Destroy(prop);
 
         yield return null;
     }
