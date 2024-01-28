@@ -54,6 +54,11 @@ public class SizeManager : MonoBehaviour
                 }
 
                 numberOfItemsNeededToCollectBeforeLevelUp *= 2;
+
+                foreach (GrannyRag rag in FindObjectsOfType<GrannyRag>())
+                {
+                    rag.DisableColliders();
+                }
             }
             else if (currentBallSize == BallSize.Medium)
             {

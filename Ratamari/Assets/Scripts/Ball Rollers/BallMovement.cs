@@ -157,10 +157,20 @@ public class BallMovement : MonoBehaviour
 
             if (collision.gameObject.GetComponent<Rigidbody>())
             {
-                collision.gameObject.GetComponent<NPCMove>().enabled = false;
+                print(collision.gameObject.name);
+
+                if (collision.gameObject.GetComponent<NPCMove>())
+                { 
+                    collision.gameObject.GetComponent<NPCMove>().enabled = false;
+                }
                 collision.gameObject.GetComponent<Rigidbody>().useGravity = true;
                 collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100 * rb.velocity.z);
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 1000 * rb.velocity.z);
+
+/*                if (collision.gameObject.GetComponent<GrannyRag>())
+                {
+                    collision.gameObject.GetComponent<GrannyRag>().EnableRagdoll();
+                }*/
             }
         }
     }
