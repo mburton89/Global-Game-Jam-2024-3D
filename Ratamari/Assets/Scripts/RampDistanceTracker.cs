@@ -8,7 +8,7 @@ public class RampDistanceTracker : MonoBehaviour
 
     public TextMeshProUGUI distanceText;
 
-    private bool shouldTrackDistance = true;
+    private bool shouldTrackDistance;
 
 
     void Update()
@@ -24,7 +24,7 @@ public class RampDistanceTracker : MonoBehaviour
 
         if (shouldTrackDistance)
         {
-
+            GetComponent<BallMovement>().jumpingOffRamp = true;
             distanceTraveled = Mathf.Max(0f, transform.position.z - targetSpot.position.z);
 
             int distanceTraveledInt = (int)distanceTraveled;
@@ -36,11 +36,11 @@ public class RampDistanceTracker : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Target"))
+        if (other.gameObject.CompareTag("Ramp"))
         {
-            shouldTrackDistance = false;
+            shouldTrackDistance = true;
         }
     }
 }

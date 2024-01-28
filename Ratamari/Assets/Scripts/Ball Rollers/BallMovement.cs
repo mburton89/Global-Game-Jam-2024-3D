@@ -12,18 +12,15 @@ public class BallMovement : MonoBehaviour
 
     public float maxMoveSpeed;
     public float initialSpeed; // how much speed the ball has when launching off the hill
-    public float jumpForce;
+
     public float currentZVelocity;
     float lastZVelocity;
+
     public float currentBallSize;
     float initialBallRadius;
 
-    public int maxJumps;
-    public int currentJumps;
-    public LayerMask groundLayer;
-
-    public bool isGrounded;
-    public bool movedForward;
+    public bool startedRolling;
+    public bool jumpingOffRamp;
 
     float moveInput;
 
@@ -40,49 +37,29 @@ public class BallMovement : MonoBehaviour
     void Update()
     {
         moveInput = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.W))
+        
+        if (!startedRolling)
         {
-            rb.AddForce(Vector3.forward * initialSpeed, ForceMode.Impulse);
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(Vector3.forward * initialSpeed, ForceMode.Impulse);
+                startedRolling = true;
+            }
         }
 
-        //Jump();
+        if (jumpingOffRamp)
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(Vector3.forward * initialSpeed, ForceMode.Impulse);
+            }
+        }
 
-        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput), rb.velocity.y, rb.velocity.z);
+        rb.velocity = new(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + moveInput, rb.velocity.y, rb.velocity.z);
         currentZVelocity = rb.velocity.z;
         lastZVelocity = rb.velocity.z;
     }
 
-    public void Jump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (currentJumps > 0)
-            {
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-                currentJumps--;
-            }
-        }
-
-        if (rb.velocity.y <= 0)
-        {
-            CheckIfGrounded();
-        }
-    }
-
-    public void CheckIfGrounded()
-    {
-        // draw an imaginary line from the player (ball) center downwards. if the line touches an object on the ground layer, consider ourselves grounded
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, (GetComponent<SphereCollider>().radius * 2) + 0.05f);
-        ResetJumps();
-    }
-
-    public void ResetJumps()
-    {
-        if (isGrounded && currentJumps != maxJumps)
-        {
-            currentJumps = maxJumps;
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {

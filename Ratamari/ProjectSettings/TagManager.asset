@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Prop
   - Ratball
+  - Ramp
   layers:
   - Default
   - TransparentFX
