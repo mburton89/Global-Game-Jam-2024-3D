@@ -15,6 +15,8 @@ public class SizeManager : MonoBehaviour
 
     public TextMeshProUGUI sizeLabel;
 
+    [HideInInspector] public bool achievedMaxSize = false;
+
     public enum BallSize
     { 
         Small,
@@ -59,6 +61,15 @@ public class SizeManager : MonoBehaviour
                 sizeLabel.SetText("L");
                 itemsCollectedForLevelUp = 0;
 
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.SoundEffect.StartGameSound);
+                }
+            }
+            else if (currentBallSize == BallSize.Large)
+            {
+                sizeLabel.SetText("XL");
+                achievedMaxSize = true;
                 if (SoundManager.Instance != null)
                 {
                     SoundManager.Instance.PlaySound(SoundManager.SoundEffect.StartGameSound);
