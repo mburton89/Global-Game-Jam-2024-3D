@@ -14,7 +14,7 @@ public class GrannyRag : MonoBehaviour
         DisableRagdoll();
 
         transform.eulerAngles = new Vector3(0, 180, 0);
-        transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        //transform.position = new Vector3(transform.position.x, transform.position.y ,  transform.position.z);
     }
 
     // Update is called once per frame

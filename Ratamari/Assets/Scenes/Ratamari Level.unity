@@ -28368,7 +28368,7 @@ PrefabInstance:
     - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
         type: 3}
       propertyPath: collectiblePrefabs.Array.size
-      value: 77
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
         type: 3}
@@ -28645,6 +28645,24 @@ PrefabInstance:
       propertyPath: collectiblePrefabs.Array.data[76]
       value: 
       objectReference: {fileID: 2164064522961202973, guid: 28eeab7850ea84b448b4080d53b0a10d,
+        type: 3}
+    - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
+        type: 3}
+      propertyPath: collectiblePrefabs.Array.data[77]
+      value: 
+      objectReference: {fileID: 3697790529200158925, guid: 3230fea7f5916054ea213e6ad8940435,
+        type: 3}
+    - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
+        type: 3}
+      propertyPath: collectiblePrefabs.Array.data[78]
+      value: 
+      objectReference: {fileID: 588435471483413086, guid: af6d6fd06d6c4cd459db03db9d8fa590,
+        type: 3}
+    - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
+        type: 3}
+      propertyPath: collectiblePrefabs.Array.data[79]
+      value: 
+      objectReference: {fileID: 5097735650746137876, guid: 3f839dc6f7ad12644a1d7069f6ef2033,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
