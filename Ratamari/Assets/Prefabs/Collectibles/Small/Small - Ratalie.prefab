@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4094597622203864308}
   - component: {fileID: 2163647468040170663}
   m_Layer: 0
-  m_Name: Ratalie
-  m_TagString: Untagged
+  m_Name: Small - Ratalie
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

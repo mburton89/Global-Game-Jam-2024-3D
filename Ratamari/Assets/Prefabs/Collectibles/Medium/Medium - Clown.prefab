@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 84567217841214350}
   - component: {fileID: 4774426727707582742}
   m_Layer: 0
-  m_Name: Clown
-  m_TagString: Untagged
+  m_Name: Medium - Clown
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4347033998788511049}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.278984, y: 596.83, z: -1625.83}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5517211, y: 1.2907715, z: 1.4914551}
-  m_Center: {x: -0.01906848, y: -1.5769653, z: 0.24572754}
+  m_Size: {x: 1.5517211, y: 1.1952953, z: 2.3718262}
+  m_Center: {x: -0.01906848, y: 0.37136874, z: 0.14990234}
 --- !u!114 &4774426727707582742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1f4f47fff67591441ad0deda55be27c1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f4f47fff67591441ad0deda55be27c1,
         type: 3}
