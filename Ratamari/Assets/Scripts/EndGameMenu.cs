@@ -12,12 +12,14 @@ public class EndGameMenu : MonoBehaviour
     public TextMeshProUGUI sizeText;
     public TextMeshProUGUI speedText;
     public TextMeshProUGUI distanceText;
+    public TextMeshProUGUI roadBlocksText;
     public TextMeshProUGUI totalText;
     public TextMeshProUGUI bestText;
 
     int sizePoints;
     int speedPoints;
     int distancePoints;
+    [HideInInspector] public int roadBlocksPoints;
     int totalPoints;
 
     public GameObject container;
@@ -62,7 +64,9 @@ public class EndGameMenu : MonoBehaviour
         distancePoints = (int)FindObjectOfType<RampDistanceTracker>().distanceTraveled;
         distanceText.SetText("Distance: " + distancePoints);
 
-        totalPoints = sizePoints + speedPoints + distancePoints;
+        roadBlocksText.SetText("Road Blocks: " + roadBlocksPoints);
+
+        totalPoints = sizePoints + speedPoints + distancePoints + roadBlocksPoints;
         totalText.SetText("Total: " + totalPoints);
 
         if (totalPoints > PlayerPrefs.GetInt("Best"))

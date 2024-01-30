@@ -27,6 +27,7 @@ public class BallMovement : MonoBehaviour
 
     float moveInput;
 
+   public MobileInputHandler mobileInputHandler;
 
     // Start is called before the first frame update
     void Start()
@@ -40,11 +41,15 @@ public class BallMovement : MonoBehaviour
     void Update()
     {
         moveInput = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.AddForce(Vector3.forward * initialSpeed, ForceMode.Impulse);
         }
 
+        if (moveInput != 0)
+        { 
+            mobileInputHandler.enabled = false;
+        }
         //Jump();
 
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput * 4), rb.velocity.y, rb.velocity.z);
@@ -108,6 +113,8 @@ public class BallMovement : MonoBehaviour
         // crash into too-big stuff to get smaller
         if (collision.gameObject.CompareTag("Prop"))
         {
+            SoundManager.Instance.PlaySound(SoundManager.SoundEffect.FartSound);
+
             if (lastZVelocity >= 10)
             {
                 // kick off props from ball on crash based on how impactful the crash was

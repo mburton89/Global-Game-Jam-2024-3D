@@ -19,6 +19,8 @@ public class RoadBlock : MonoBehaviour
             {
                 SoundManager.Instance.PlaySound(SoundManager.SoundEffect.RoadBlockSound);
             }
+
+            EndGameMenu.Instance.roadBlocksPoints += 10;
         }
     }
 }

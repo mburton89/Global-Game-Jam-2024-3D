@@ -91,7 +91,7 @@ public class SizeManager : MonoBehaviour
     {
         print("Prop was removed from ball!");
 
-        SoundManager.Instance.PlaySound(SoundManager.SoundEffect.FartSound);
+        //SoundManager.Instance.PlaySound(SoundManager.SoundEffect.FartSound);
 
         itemsCollectedForLevelUp -= itemsLost;
         radialFill.fillAmount = (float)itemsCollectedForLevelUp / (float)numberOfItemsNeededToCollectBeforeLevelUp;

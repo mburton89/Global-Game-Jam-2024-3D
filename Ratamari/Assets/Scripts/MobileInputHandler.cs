@@ -6,7 +6,7 @@ using TMPro;
 
 public class MobileInputHandler : MonoBehaviour
 {
-    public float tiltSpeed = 5f; // Adjust this value to control the sensitivity of the tilt
+    public float tiltSpeed = 5f; // Adjust this valu e to control the sensitivity of the tilt
 
     private Rigidbody rb;
 

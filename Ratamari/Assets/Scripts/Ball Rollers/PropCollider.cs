@@ -29,6 +29,7 @@ public class PropCollider : MonoBehaviour
         if (size == Size.Small)
         {
             propValue = 0.01f;
+            transform.eulerAngles = new Vector3(0, UnityEngine.Random.Range(0f, 360f), 0);
         }
         if (size == Size.Medium)
         {
@@ -38,6 +39,7 @@ public class PropCollider : MonoBehaviour
         {
             propValue = 0.03f;
         }
+
     }
 
     // Update is called once per frame
