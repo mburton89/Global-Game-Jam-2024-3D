@@ -4349,6 +4349,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1395694374}
     m_Modifications:
+    - target: {fileID: -7914948022295827332, guid: d47f1eefd1006dc43baba48ceb3621a5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2322813899068589672, guid: d47f1eefd1006dc43baba48ceb3621a5,
         type: 3}
       propertyPath: m_Enabled
@@ -10668,6 +10673,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1395694374}
     m_Modifications:
+    - target: {fileID: -9155835232527662604, guid: 29995499d75642c429073ba35a8e7728,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1519386834077282481, guid: 29995499d75642c429073ba35a8e7728,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -12722,6 +12732,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1395694374}
     m_Modifications:
+    - target: {fileID: -7914948022295827332, guid: 9d1d9142c3bc79b439b0a44ca01fa282,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3602456165142358103, guid: 9d1d9142c3bc79b439b0a44ca01fa282,
         type: 3}
       propertyPath: m_Enabled
@@ -15581,6 +15596,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1395694374}
     m_Modifications:
+    - target: {fileID: 7066611481822936501, guid: ec60872b53b052349b61a4e040e9f267,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8388947725828943298, guid: ec60872b53b052349b61a4e040e9f267,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -15779,7 +15799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06d15d7e3bd28b4cbf69739284e2d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Ratamari Level 0
+  sceneToLoad: Gameplay
 --- !u!1001 &1166500935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19176,7 +19196,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395694373}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72fd22cd315ec1c4ebaba7f328d45645, type: 3}
   m_Name: 
@@ -21816,6 +21836,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small - Gnome
       objectReference: {fileID: 0}
+    - target: {fileID: 5381799264012018197, guid: 26e5077d9ac143f45b74185870a52e26,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22379,6 +22404,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1395694374}
     m_Modifications:
+    - target: {fileID: -7914948022295827332, guid: fec334a9281db3944927aa516a3491d9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 736354838296681522, guid: fec334a9281db3944927aa516a3491d9,
         type: 3}
       propertyPath: m_Enabled
@@ -27842,6 +27872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Large - Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320475385134651343, guid: 52f7694e02f03094b8bd6f063d20198b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409795544488054371, guid: 52f7694e02f03094b8bd6f063d20198b,
         type: 3}
