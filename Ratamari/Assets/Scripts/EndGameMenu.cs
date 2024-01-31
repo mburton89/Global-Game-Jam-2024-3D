@@ -33,12 +33,15 @@ public class EndGameMenu : MonoBehaviour
 
     private void Start()
     {
-        retryButton.onClick.AddListener(Retry);
+
     }
 
     public void Activate()
     {
         container.SetActive(true);
+
+        retryButton.gameObject.SetActive(false);
+        StartCoroutine(DelayShowRetry());
 
         if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Small)
         {
@@ -80,5 +83,12 @@ public class EndGameMenu : MonoBehaviour
     void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private IEnumerator DelayShowRetry()
+    {
+        yield return new WaitForSeconds(2f);
+        retryButton.gameObject.SetActive(true);
+        retryButton.onClick.AddListener(Retry);
     }
 }
