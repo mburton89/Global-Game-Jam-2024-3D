@@ -418,7 +418,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &726018656789459787
+--- !u!1 &771618084910780778
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,43 +426,169 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2539098371768334901}
-  - component: {fileID: 2573017621307275634}
+  - component: {fileID: 381328758790904364}
+  - component: {fileID: 8862660507082503282}
   m_Layer: 0
-  m_Name: Audio Source - Music
+  m_Name: Sound Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2539098371768334901
+--- !u!4 &381328758790904364
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726018656789459787}
+  m_GameObject: {fileID: 771618084910780778}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2939834285664748406}
+  - {fileID: 2921384569999475014}
+  - {fileID: 1624148397389270253}
+  - {fileID: 1771137335978446094}
+  - {fileID: 5015804083843203938}
+  - {fileID: 7022852606659756159}
+  - {fileID: 6598170638260636547}
+  - {fileID: 570261287463989700}
+  - {fileID: 2048507105724459768}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8862660507082503282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771618084910780778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acb4f5b151298c4e9a8478bc104b3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minRandomPitch: 0.82
+  maxRandomPitch: 1.15
+  obstacleHitSounds:
+  - {fileID: 2161139841131870788}
+  - {fileID: 2161139841131870788}
+  - {fileID: 5426078736329599278}
+  - {fileID: 304315082597326961}
+  smallItemCollectSounds:
+  - {fileID: 1308024399023764622}
+  - {fileID: 5752374051477278148}
+  - {fileID: 6842596631577430056}
+  mediumItemCollectSounds:
+  - {fileID: 1308024399023764622}
+  - {fileID: 5752374051477278148}
+  - {fileID: 6842596631577430056}
+  bigItemCollectSounds:
+  - {fileID: 1308024399023764622}
+  - {fileID: 5752374051477278148}
+  - {fileID: 6842596631577430056}
+  squeakSounds:
+  - {fileID: 6308477014520094870}
+  - {fileID: 8857611786844096200}
+  - {fileID: 5652379166575562753}
+  startGameSounds:
+  - {fileID: 4366415402923102139}
+  fartSounds:
+  - {fileID: 272353773675330585}
+  - {fileID: 272353773675330585}
+  jumpSounds:
+  - {fileID: 8358982588624484266}
+  carHornSounds:
+  - {fileID: 1502500087438726074}
+  - {fileID: 4459586228240559185}
+  - {fileID: 7368562383847370991}
+  roadBlockSounds:
+  - {fileID: 6397997074343150758}
+  - {fileID: 7754081279031101450}
+  musicTracks:
+  - {fileID: 8093577137188852595}
+  - {fileID: 8939804711616499862}
+--- !u!1 &894860011924914501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2048507105724459768}
+  m_Layer: 0
+  m_Name: Music Tracks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2048507105724459768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894860011924914501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 493174744500949592}
+  - {fileID: 8588442163998523678}
+  m_Father: {fileID: 381328758790904364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1413300279464230085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8588442163998523678}
+  - component: {fileID: 8939804711616499862}
+  m_Layer: 0
+  m_Name: Audio Source - Stairway to Rat Heaven
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8588442163998523678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413300279464230085}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 381328758790904364}
+  m_Father: {fileID: 2048507105724459768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2573017621307275634
+--- !u!82 &8939804711616499862
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726018656789459787}
+  m_GameObject: {fileID: 1413300279464230085}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ab6a584b98af2e042a4bb66770b2e011, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -546,130 +672,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &771618084910780778
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 381328758790904364}
-  - component: {fileID: 8862660507082503282}
-  m_Layer: 0
-  m_Name: Sound Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &381328758790904364
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771618084910780778}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2539098371768334901}
-  - {fileID: 2939834285664748406}
-  - {fileID: 2921384569999475014}
-  - {fileID: 1624148397389270253}
-  - {fileID: 1771137335978446094}
-  - {fileID: 5015804083843203938}
-  - {fileID: 7022852606659756159}
-  - {fileID: 6598170638260636547}
-  - {fileID: 570261287463989700}
-  - {fileID: 2048507105724459768}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8862660507082503282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771618084910780778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4acb4f5b151298c4e9a8478bc104b3c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minRandomPitch: 0.82
-  maxRandomPitch: 1.15
-  obstacleHitSounds:
-  - {fileID: 2161139841131870788}
-  - {fileID: 2161139841131870788}
-  - {fileID: 5426078736329599278}
-  - {fileID: 304315082597326961}
-  smallItemCollectSounds:
-  - {fileID: 1308024399023764622}
-  - {fileID: 5752374051477278148}
-  - {fileID: 6842596631577430056}
-  mediumItemCollectSounds:
-  - {fileID: 1308024399023764622}
-  - {fileID: 5752374051477278148}
-  - {fileID: 6842596631577430056}
-  bigItemCollectSounds:
-  - {fileID: 1308024399023764622}
-  - {fileID: 5752374051477278148}
-  - {fileID: 6842596631577430056}
-  squeakSounds:
-  - {fileID: 6308477014520094870}
-  - {fileID: 8857611786844096200}
-  - {fileID: 5652379166575562753}
-  startGameSounds:
-  - {fileID: 4366415402923102139}
-  fartSounds:
-  - {fileID: 272353773675330585}
-  - {fileID: 272353773675330585}
-  jumpSounds:
-  - {fileID: 8358982588624484266}
-  carHornSounds:
-  - {fileID: 1502500087438726074}
-  - {fileID: 4459586228240559185}
-  - {fileID: 7368562383847370991}
-  roadBlockSounds:
-  - {fileID: 6397997074343150758}
-  - {fileID: 7754081279031101450}
-  musicTracks: []
---- !u!1 &894860011924914501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2048507105724459768}
-  m_Layer: 0
-  m_Name: Music Tracks
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2048507105724459768
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894860011924914501}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 493174744500949592}
-  m_Father: {fileID: 381328758790904364}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431552149954710664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,7 +2386,7 @@ GameObject:
   - component: {fileID: 493174744500949592}
   - component: {fileID: 8093577137188852595}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Audio Source - Rolling In The Cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

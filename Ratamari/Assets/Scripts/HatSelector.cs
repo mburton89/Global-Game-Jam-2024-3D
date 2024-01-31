@@ -16,5 +16,14 @@ public class HatSelector : MonoBehaviour
         int rand = Random.Range(0, hats.Count);
 
         hats[rand].SetActive(true);
+
+        if (hats[rand].gameObject.name == "sonic")
+        {
+            SoundManager.Instance.FadeToSonicMusic();
+        }
+        else
+        {
+            SoundManager.Instance.FadeToCheeseMusic();
+        }
     }
 }

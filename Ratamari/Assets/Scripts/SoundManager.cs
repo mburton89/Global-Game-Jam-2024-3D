@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class SoundManager : MonoBehaviour
 {
@@ -211,7 +212,7 @@ public class SoundManager : MonoBehaviour
             }
             else
             {
-                roadBlockSoundIndex = 0;
+                roadBlockSoundIndex = 0; 
             }
         }
 
@@ -223,5 +224,17 @@ public class SoundManager : MonoBehaviour
 
         audioSourceToPlay.pitch = randPitch;
         audioSourceToPlay.Play();
+    }
+
+    public void FadeToSonicMusic()
+    {
+        musicTracks[0].DOFade(0, 2f);
+        musicTracks[1].DOFade(1, 2f);
+    }
+
+    public void FadeToCheeseMusic()
+    {
+        musicTracks[1].DOFade(0, 2f);
+        musicTracks[0].DOFade(1, 2f);
     }
 }
