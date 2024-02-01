@@ -97,8 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: e44ddff5f0c2cfd4089325b462fd256a,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -35798,7 +35797,7 @@ PrefabInstance:
     - target: {fileID: 1595469549546349094, guid: f8f3268440139d846828ab9a9b6aa784,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.4
+      value: 23.7
       objectReference: {fileID: 0}
     - target: {fileID: 1595469549546349094, guid: f8f3268440139d846828ab9a9b6aa784,
         type: 3}
@@ -35808,7 +35807,7 @@ PrefabInstance:
     - target: {fileID: 1595469549546349094, guid: f8f3268440139d846828ab9a9b6aa784,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 155.6
+      value: 161.7
       objectReference: {fileID: 0}
     - target: {fileID: 1595469549546349094, guid: f8f3268440139d846828ab9a9b6aa784,
         type: 3}
@@ -35849,6 +35848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: billboard- Cheese Deal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121177517633697948, guid: f8f3268440139d846828ab9a9b6aa784,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2121177517633697948, guid: f8f3268440139d846828ab9a9b6aa784,
         type: 3}
@@ -46635,7 +46639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -65258,7 +65262,7 @@ PrefabInstance:
     - target: {fileID: 1595469549546349094, guid: ebba83d8699854545a7ebd811797843d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37
+      value: -34.4
       objectReference: {fileID: 0}
     - target: {fileID: 1595469549546349094, guid: ebba83d8699854545a7ebd811797843d,
         type: 3}
@@ -65268,7 +65272,7 @@ PrefabInstance:
     - target: {fileID: 1595469549546349094, guid: ebba83d8699854545a7ebd811797843d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -118.1
+      value: -118.4
       objectReference: {fileID: 0}
     - target: {fileID: 1595469549546349094, guid: ebba83d8699854545a7ebd811797843d,
         type: 3}
@@ -65309,6 +65313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: billboard-ChanceOfDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121177517633697948, guid: ebba83d8699854545a7ebd811797843d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2121177517633697948, guid: ebba83d8699854545a7ebd811797843d,
         type: 3}
@@ -77766,7 +77775,6 @@ GameObject:
   - component: {fileID: 1926721430}
   - component: {fileID: 1926721432}
   - component: {fileID: 1926721431}
-  - component: {fileID: 1926721433}
   m_Layer: 0
   m_Name: Ratalie (24)
   m_TagString: Untagged
@@ -77838,28 +77846,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926721429}
-  m_Mesh: {fileID: 465279096138758712, guid: afdfc70d8cc0a744295ee6033b285007, type: 3}
---- !u!64 &1926721433
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926721429}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 465279096138758712, guid: afdfc70d8cc0a744295ee6033b285007, type: 3}
 --- !u!1001 &1929080808
 PrefabInstance:
@@ -98051,6 +98037,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectible Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 371054817201236721, guid: 94df49de5b3cae4409181a2bb7887820,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3553712500263761309, guid: 94df49de5b3cae4409181a2bb7887820,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -98129,7 +98120,7 @@ PrefabInstance:
     - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
         type: 3}
       propertyPath: collectiblePrefabs.Array.size
-      value: 105
+      value: 103
       objectReference: {fileID: 0}
     - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
         type: 3}
@@ -98567,7 +98558,7 @@ PrefabInstance:
         type: 3}
       propertyPath: collectiblePrefabs.Array.data[103]
       value: 
-      objectReference: {fileID: 5097735650746137876, guid: 3f839dc6f7ad12644a1d7069f6ef2033,
+      objectReference: {fileID: 3697790529200158925, guid: 3230fea7f5916054ea213e6ad8940435,
         type: 3}
     - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
         type: 3}

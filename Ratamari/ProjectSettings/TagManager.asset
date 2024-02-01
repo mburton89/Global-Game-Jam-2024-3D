@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Prop
   - Ratball
+  - Target
   layers:
   - Default
   - TransparentFX

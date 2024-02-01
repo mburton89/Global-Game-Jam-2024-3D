@@ -70,6 +70,8 @@ public class SizeManager : MonoBehaviour
                 {
                     SoundManager.Instance.PlaySound(SoundManager.SoundEffect.StartGameSound);
                 }
+
+                numberOfItemsNeededToCollectBeforeLevelUp *= 2;
             }
             else if (currentBallSize == BallSize.Large && !achievedMaxSize)
             {
