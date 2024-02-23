@@ -51,7 +51,7 @@ public class EndGameMenu : MonoBehaviour
         {
             sizePoints = 200;
         }
-        else if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Large)
+        else if (SizeManager.Instance.currentBallSize == SizeManager.BallSize.Large && !SizeManager.Instance.achievedMaxSize)
         {
             sizePoints = 300;
         }
