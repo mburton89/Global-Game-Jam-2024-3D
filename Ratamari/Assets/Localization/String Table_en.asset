@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: String Table_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c909f6dd877bdb44b92bfef76093f606, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 5364616727598465077
+  m_TableData:
+  - m_Id: 112364765184
+    m_Localized: Tap to Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2906668810240
+    m_Localized: Hello World
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28354329067520
+    m_Localized: 'Score: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 5364616727598465077
+  references:
+    version: 2
+    RefIds:
+    - rid: 5364616727598465077
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0040b6c1c9190000
