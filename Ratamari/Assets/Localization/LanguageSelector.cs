@@ -10,6 +10,12 @@ public class LanguageSelector : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("HasAutoSetLangauge") != 1)
+        {
+            AutoSetLanguage();
+            PlayerPrefs.SetInt("HasAutoSetLangauge", 1);
+        }
+
         int savedLocaleID = PlayerPrefs.GetInt("LocaleKey", 0);
         ChangeLangauge(savedLocaleID);
     }
@@ -26,5 +32,24 @@ public class LanguageSelector : MonoBehaviour
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localeID];
         PlayerPrefs.SetInt("LocaleKey", localeID);
         isActive = false;
+    }
+
+    void AutoSetLanguage()
+    {
+        switch (Application.systemLanguage)
+        {
+            case SystemLanguage.English:
+                PlayerPrefs.SetInt("LocaleKey", 0);
+                break;
+            case SystemLanguage.French:
+                PlayerPrefs.SetInt("LocaleKey", 1);
+                break;
+            case SystemLanguage.Japanese:
+                PlayerPrefs.SetInt("LocaleKey", 2);
+                break;
+            case SystemLanguage.Spanish:
+                PlayerPrefs.SetInt("LocaleKey", 3);
+                break;
+        }
     }
 }
