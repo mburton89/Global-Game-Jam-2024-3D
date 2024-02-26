@@ -22,7 +22,7 @@ public class SpeedDisplay : MonoBehaviour
         }
 
         // Display the speed in the UI text
-        speedText.text =  speed.ToString() + " MPH";
+        speedText.text =  speed.ToString();
 
     }
 }

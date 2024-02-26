@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2906668810240
-    m_Localized: Hola Mundo
+    m_Localized: Hola
     m_Metadata:
       m_Items: []
   - m_Id: 28354329067520
@@ -32,6 +32,60 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5364616727598465080
+  - m_Id: 810078025695232
+    m_Localized: Toque para rodar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812413397385216
+    m_Localized: "C\xF3mo jugar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812440823939072
+    m_Localized: "Recoja tantos art\xEDculos como pueda"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812498705334272
+    m_Localized: "Alcanzar un tama\xF1o m\xE1s grande para recolectar art\xEDculos
+      m\xE1s grandes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812552782495744
+    m_Localized: "Incline su tel\xE9fono para moverse hacia la izquierda y hacia
+      la derecha"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812585028304896
+    m_Localized: "Toque la pantalla para ir m\xE1s r\xE1pido"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821226955489280
+    m_Localized: Velocidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821234937249792
+    m_Localized: "Tama\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821236950515712
+    m_Localized: Distancia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821238556934144
+    m_Localized: Bloques de carretera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821241010601984
+    m_Localized: Total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821346711257088
+    m_Localized: Mejor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821369985449984
+    m_Localized: Toque para volver a intentarlo
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

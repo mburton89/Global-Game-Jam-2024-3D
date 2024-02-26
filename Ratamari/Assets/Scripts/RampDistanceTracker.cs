@@ -7,6 +7,7 @@ public class RampDistanceTracker : MonoBehaviour
     [HideInInspector] public float distanceTraveled;
 
     public TextMeshProUGUI distanceText;
+    public Transform label;
 
     private bool shouldTrackDistance = true;
 
@@ -16,10 +17,12 @@ public class RampDistanceTracker : MonoBehaviour
         if (distanceTraveled < 1)
         {
             distanceText.transform.transform.localScale = Vector3.zero;
+            label.localScale = Vector3.zero;
         }
         else
         {
             distanceText.transform.transform.localScale = Vector3.one;
+            label.localScale = Vector3.one;
         }
 
         if (shouldTrackDistance)
@@ -31,7 +34,7 @@ public class RampDistanceTracker : MonoBehaviour
 
             if (distanceText != null)
             {
-                distanceText.text = distanceTraveledInt + " Feet";
+                distanceText.text = distanceTraveledInt.ToString();
             }
         }
     }

@@ -26,6 +26,8 @@ public class EndGameMenu : MonoBehaviour
 
     public Button retryButton;
 
+    public GameObject languageMenuContainer;
+    public Button languageButton;
     void Awake()
     {
         Instance = this;
@@ -33,13 +35,13 @@ public class EndGameMenu : MonoBehaviour
 
     private void Start()
     {
-
+        languageButton.onClick.AddListener(OpenLanguageMenu);
     }
 
     public void Activate()
     {
         container.SetActive(true);
-
+        //container.transform.localScale = Vector3.one;
         retryButton.gameObject.SetActive(false);
         StartCoroutine(DelayShowRetry());
 
@@ -59,25 +61,25 @@ public class EndGameMenu : MonoBehaviour
         {
             sizePoints = 400;
         }
-        sizeText.SetText("Size: " + sizePoints);
+        sizeText.SetText("" + sizePoints);
 
         speedPoints = FindObjectOfType<SpeedDisplay>().highestSpeedThisSession;
-        speedText.SetText("Speed: " + speedPoints);
+        speedText.SetText("" + speedPoints);
 
         distancePoints = (int)FindObjectOfType<RampDistanceTracker>().distanceTraveled;
-        distanceText.SetText("Distance: " + distancePoints);
+        distanceText.SetText("" + distancePoints);
 
-        roadBlocksText.SetText("Road Blocks: " + roadBlocksPoints);
+        roadBlocksText.SetText("" + roadBlocksPoints);
 
         totalPoints = sizePoints + speedPoints + distancePoints + roadBlocksPoints;
-        totalText.SetText("Total: " + totalPoints);
+        totalText.SetText("" + totalPoints);
 
         if (totalPoints > PlayerPrefs.GetInt("Best"))
         {
             PlayerPrefs.SetInt("Best", totalPoints);
         }
 
-        bestText.SetText("Best: " + PlayerPrefs.GetInt("Best"));
+        bestText.SetText("" + PlayerPrefs.GetInt("Best"));
     }
 
     void Retry()
@@ -90,5 +92,10 @@ public class EndGameMenu : MonoBehaviour
         yield return new WaitForSeconds(2f);
         retryButton.gameObject.SetActive(true);
         retryButton.onClick.AddListener(Retry);
+    }
+
+    void OpenLanguageMenu()
+    { 
+        languageMenuContainer.SetActive(true);
     }
 }

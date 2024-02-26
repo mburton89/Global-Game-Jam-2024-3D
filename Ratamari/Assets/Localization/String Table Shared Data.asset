@@ -27,6 +27,58 @@ MonoBehaviour:
     m_Key: dynamic-test
     m_Metadata:
       m_Items: []
+  - m_Id: 810078025695232
+    m_Key: tap-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812413397385216
+    m_Key: how-to-play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812440823939072
+    m_Key: htp-collect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812498705334272
+    m_Key: htp-size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812552782495744
+    m_Key: htp-tilt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812585028304896
+    m_Key: htp-tap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821226955489280
+    m_Key: label-speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821234937249792
+    m_Key: label-size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821236950515712
+    m_Key: label-distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821238556934144
+    m_Key: label-road-blocks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821241010601984
+    m_Key: label-total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821346711257088
+    m_Key: label-best
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821369985449984
+    m_Key: tap-3
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -45,7 +45,7 @@ public class SizeManager : MonoBehaviour
             if (currentBallSize == BallSize.Small)
             {
                 currentBallSize = BallSize.Medium;
-                sizeLabel.SetText("M");
+                sizeLabel.SetText("2");
                 itemsCollectedForLevelUp = 0;
 
                 if (SoundManager.Instance != null)
@@ -63,7 +63,7 @@ public class SizeManager : MonoBehaviour
             else if (currentBallSize == BallSize.Medium)
             {
                 currentBallSize = BallSize.Large;
-                sizeLabel.SetText("L");
+                sizeLabel.SetText("3");
                 itemsCollectedForLevelUp = 0;
 
                 if (SoundManager.Instance != null)
@@ -75,7 +75,7 @@ public class SizeManager : MonoBehaviour
             }
             else if (currentBallSize == BallSize.Large && !achievedMaxSize)
             {
-                sizeLabel.SetText("XL");
+                sizeLabel.SetText("4");
                 achievedMaxSize = true;
                 if (SoundManager.Instance != null)
                 {

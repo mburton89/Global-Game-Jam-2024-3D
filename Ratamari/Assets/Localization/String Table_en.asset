@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2906668810240
-    m_Localized: Hello World
+    m_Localized: Hello
     m_Metadata:
       m_Items: []
   - m_Id: 28354329067520
@@ -32,6 +32,58 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5364616727598465077
+  - m_Id: 810078025695232
+    m_Localized: Tap to Roll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812413397385216
+    m_Localized: How to play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812440823939072
+    m_Localized: Collect as many items as you can
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812498705334272
+    m_Localized: Reach a bigger size to collect bigger items
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812552782495744
+    m_Localized: Tilt your phone to move left and right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812585028304896
+    m_Localized: Tap the screen to go faster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821226955489280
+    m_Localized: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821234937249792
+    m_Localized: Size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821236950515712
+    m_Localized: Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821238556934144
+    m_Localized: Road Blocks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821241010601984
+    m_Localized: Total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821346711257088
+    m_Localized: Best
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821369985449984
+    m_Localized: Tap to Retry
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -32,6 +32,60 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5364616727598465078
+  - m_Id: 810078025695232
+    m_Localized: Taper pour rouler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812413397385216
+    m_Localized: Comment jouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812440823939072
+    m_Localized: Collectez autant d'articles que possible
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812498705334272
+    m_Localized: Atteindre une taille plus grande pour collecter des articles plus
+      grands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812552782495744
+    m_Localized: "Inclinez votre t\xE9l\xE9phone pour se d\xE9placer \xE0 gauche
+      et \xE0 droite"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 812585028304896
+    m_Localized: "Appuyez sur l'\xE9cran pour aller plus vite"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821226955489280
+    m_Localized: Vitesse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821234937249792
+    m_Localized: Taille
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821236950515712
+    m_Localized: Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821238556934144
+    m_Localized: "Obstructions routi\xE8res"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821241010601984
+    m_Localized: Total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821346711257088
+    m_Localized: Meilleur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 821369985449984
+    m_Localized: "Cliquer pour r\xE9essayer"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
