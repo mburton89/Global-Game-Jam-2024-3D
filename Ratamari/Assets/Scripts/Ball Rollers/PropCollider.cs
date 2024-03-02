@@ -9,6 +9,8 @@ public class PropCollider : MonoBehaviour
     public float propValue;
     public bool pickedUp;
 
+    public AudioClip CollectableSoundToPlay;
+
     Collider col;
 
     public bool isRat;
