@@ -43,6 +43,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] List<AudioSource> musicTracks;
     int musicSoundIndex;
 
+    public AudioSource clipPlayer;
+
     public enum SoundEffect
     {
         ObstacleHit,
@@ -226,6 +228,23 @@ public class SoundManager : MonoBehaviour
         audioSourceToPlay.Play();
     }
 
+    public void PlayAudioClip(AudioClip audioClip)
+    {
+        if (audioClip == null)
+        {
+            Debug.Log("Fart");
+            PlaySound(SoundEffect.FartSound);
+        }
+        else
+        {
+            Debug.Log("sfxPLayed");
+            clipPlayer.clip = audioClip;
+            float randPitch = Random.Range(minRandomPitch, maxRandomPitch);
+            clipPlayer.pitch = randPitch;
+            clipPlayer.Play();
+        }
+        
+    }
     public void FadeToSonicMusic()
     {
         musicTracks[0].DOFade(0, 2f);

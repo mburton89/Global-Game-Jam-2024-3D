@@ -113,7 +113,8 @@ public class BallMovement : MonoBehaviour
         // crash into too-big stuff to get smaller
         if (collision.gameObject.CompareTag("Prop"))
         {
-            SoundManager.Instance.PlaySound(SoundManager.SoundEffect.FartSound);
+            AudioClip clip = collision.gameObject.GetComponent<PropCollider>().CollectableSoundToPlay;
+            SoundManager.Instance.PlayAudioClip(clip);
 
             if (lastZVelocity >= 10)
             {
