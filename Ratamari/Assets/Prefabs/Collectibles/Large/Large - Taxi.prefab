@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   propValue: 0
   pickedUp: 0
-  CollectableSoundToPlay: {fileID: 8300000, guid: f9d6ec20bad068440a77e5ee46441269,
+  CollectableSoundToPlay: {fileID: 8300000, guid: cc9b3c942c76ffe41b98cce32f716274,
     type: 3}
   isRat: 0
   size: 2
