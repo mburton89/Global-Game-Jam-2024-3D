@@ -101395,6 +101395,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
         type: 3}
+      propertyPath: maxX
+      value: 15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
+        type: 3}
+      propertyPath: minX
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864299184871948567, guid: 94df49de5b3cae4409181a2bb7887820,
+        type: 3}
       propertyPath: collectibleParent
       value: 
       objectReference: {fileID: 2061988949}
