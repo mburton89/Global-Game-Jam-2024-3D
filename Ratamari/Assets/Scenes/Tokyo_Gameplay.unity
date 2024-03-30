@@ -12490,7 +12490,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.77000904, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.031500474, g: 0, b: 0.0754717, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -14024,6 +14024,7 @@ MonoBehaviour:
   isGrounded: 0
   movedForward: 0
   mobileInputHandler: {fileID: 1214782503}
+  gameInstructions: {fileID: 0}
 --- !u!54 &1214782498
 Rigidbody:
   m_ObjectHideFlags: 0
