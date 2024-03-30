@@ -373,8 +373,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Reach a bigger size\nto collect bigger items \n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 51416fcb59275ca46ae18850df09b93f, type: 2}
-  m_sharedMaterial: {fileID: 7643827262411512725, guid: 51416fcb59275ca46ae18850df09b93f,
+  m_fontAsset: {fileID: 11400000, guid: 156c66fb09629e74aa3a366c0f322118, type: 2}
+  m_sharedMaterial: {fileID: -4445782522590674131, guid: 156c66fb09629e74aa3a366c0f322118,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -40
+  m_lineSpacing: -10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -2736,8 +2736,8 @@ MonoBehaviour:
 
     left and right'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 51416fcb59275ca46ae18850df09b93f, type: 2}
-  m_sharedMaterial: {fileID: 7643827262411512725, guid: 51416fcb59275ca46ae18850df09b93f,
+  m_fontAsset: {fileID: 11400000, guid: ea0f19e2bb748a1429868fca72194b53, type: 2}
+  m_sharedMaterial: {fileID: 7247635448303064589, guid: ea0f19e2bb748a1429868fca72194b53,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2774,7 +2774,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -40
+  m_lineSpacing: -10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -9147,7 +9147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -443.7}
+  m_AnchoredPosition: {x: 0, y: -490.5}
   m_SizeDelta: {x: -10, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1509565096
@@ -9199,8 +9199,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 51416fcb59275ca46ae18850df09b93f, type: 2}
-  m_sharedMaterial: {fileID: 7643827262411512725, guid: 51416fcb59275ca46ae18850df09b93f,
+  m_fontAsset: {fileID: 11400000, guid: 3fd8aaeb92190644ab3469beed7eb251, type: 2}
+  m_sharedMaterial: {fileID: -5129654480876777398, guid: 3fd8aaeb92190644ab3469beed7eb251,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9237,7 +9237,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -40
+  m_lineSpacing: -10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
