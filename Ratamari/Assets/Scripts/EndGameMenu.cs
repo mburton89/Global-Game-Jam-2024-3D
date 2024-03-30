@@ -84,7 +84,14 @@ public class EndGameMenu : MonoBehaviour
 
     void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene(3);
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     private IEnumerator DelayShowRetry()
