@@ -28,6 +28,7 @@ public class BallMovement : MonoBehaviour
     float moveInput;
 
    public MobileInputHandler mobileInputHandler;
+    public Instructions gameInstructions;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class BallMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         initialBallRadius = GetComponent<SphereCollider>().radius;
         currentBallSize = 1;
+
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class BallMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.AddForce(Vector3.forward * initialSpeed, ForceMode.Impulse);
+            gameInstructions.currentInstruct.SetActive(false);
         }
 
         if (moveInput != 0)
