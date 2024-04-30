@@ -28,6 +28,14 @@ public class EndGameMenu : MonoBehaviour
 
     public GameObject languageMenuContainer;
     public Button languageButton;
+
+    public Image endGameImage;
+
+    public Sprite badEnding;
+    public Sprite medEnding;
+    public Sprite goodSanFranEnding;
+    public Sprite goodTokyoEnding;
+
     void Awake()
     {
         Instance = this;
@@ -80,6 +88,8 @@ public class EndGameMenu : MonoBehaviour
         }
 
         bestText.SetText("" + PlayerPrefs.GetInt("Best"));
+
+        DetermineEndScreen((float)distancePoints);
     }
 
     void Retry()
@@ -104,5 +114,28 @@ public class EndGameMenu : MonoBehaviour
     void OpenLanguageMenu()
     { 
         languageMenuContainer.SetActive(true);
+    }
+
+    public void DetermineEndScreen(float distance)
+    {
+        if (distance <= 300)
+        {
+            endGameImage.sprite = badEnding;
+        }
+        else if (distance > 300 || distance <= 650)
+        {
+            endGameImage.sprite = medEnding;
+        }
+        else
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                endGameImage.sprite = goodTokyoEnding;
+            }
+            else
+            {
+                endGameImage.sprite = goodSanFranEnding;
+            }
+        }
     }
 }

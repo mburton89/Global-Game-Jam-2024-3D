@@ -29,6 +29,16 @@ public class Instructions : MonoBehaviour
         }
 
         showInstructions();
+
+        if (PlayerPrefs.GetInt("HasSeenTutorial") != 1)
+        {
+            PlayerPrefs.SetInt("HasSeenTutorial", 1);
+            StartCoroutine(DelayDestroyForever());
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -51,6 +61,10 @@ public class Instructions : MonoBehaviour
         currentInstruct.SetActive(true);
     }
 
-
+    private IEnumerator DelayDestroyForever()
+    {
+        yield return new WaitForSeconds(7);
+        Destroy(gameObject);
+    }
 
 }
