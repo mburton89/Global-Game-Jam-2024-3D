@@ -77,6 +77,8 @@ public class EndGameMenu : MonoBehaviour
         distancePoints = (int)FindObjectOfType<RampDistanceTracker>().distanceTraveled;
         distanceText.SetText("" + distancePoints);
 
+        DetermineDistanceAchievement(distancePoints);
+
         roadBlocksText.SetText("" + roadBlocksPoints);
 
         totalPoints = sizePoints + speedPoints + distancePoints + roadBlocksPoints;
@@ -90,6 +92,29 @@ public class EndGameMenu : MonoBehaviour
         bestText.SetText("" + PlayerPrefs.GetInt("Best"));
 
         DetermineEndScreen((float)distancePoints);
+    }
+
+    void DetermineDistanceAchievement(int distanceTraveledInt)
+    {
+        print("distanceTraveledInt " + distanceTraveledInt);
+
+        if (distanceTraveledInt >= 200)
+        {
+            AchievementsManager.Instance.UnlockAchievement(AchievementsManager.Instance.DISTANCE_200);
+            Debug.Log("UNLOCKED 200 Achievement");
+        }
+
+        if (distanceTraveledInt >= 300)
+        {
+            AchievementsManager.Instance.UnlockAchievement(AchievementsManager.Instance.DISTANCE_300);
+            Debug.Log("UNLOCKED 300 Achievement");
+        }
+
+        if (distanceTraveledInt >= 400)
+        {
+            AchievementsManager.Instance.UnlockAchievement(AchievementsManager.Instance.DISTANCE_400);
+            Debug.Log("UNLOCKED 400 Achievement");
+        }
     }
 
     void Retry()

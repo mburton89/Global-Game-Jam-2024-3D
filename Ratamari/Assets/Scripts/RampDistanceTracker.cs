@@ -11,9 +11,12 @@ public class RampDistanceTracker : MonoBehaviour
 
     private bool shouldTrackDistance = true;
 
+    int distanceTraveledInt;
 
     void Update()
     {
+        print("shouldTrackDistance: " + shouldTrackDistance);
+
         if (distanceTraveled < 1)
         {
             distanceText.transform.transform.localScale = Vector3.zero;
@@ -30,7 +33,7 @@ public class RampDistanceTracker : MonoBehaviour
 
             distanceTraveled = Mathf.Max(0f, transform.position.z - targetSpot.position.z);
 
-            int distanceTraveledInt = (int)distanceTraveled;
+            distanceTraveledInt = (int)distanceTraveled;
 
             if (distanceText != null)
             {
