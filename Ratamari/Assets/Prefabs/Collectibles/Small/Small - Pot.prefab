@@ -78,6 +78,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pot-of-Boiling-Water
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ea56b677d16323499a90bbe2abe6818,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7071182760956848314, guid: 4ea56b677d16323499a90bbe2abe6818,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -88,6 +93,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 484f74cf9adcec74aa782d203008a1c8, type: 2}
+    - target: {fileID: 8513859187771203891, guid: 4ea56b677d16323499a90bbe2abe6818,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 4ea56b677d16323499a90bbe2abe6818, type: 3}
@@ -127,17 +137,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fca88f9bb20ad99478d491597030f92f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.61
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fca88f9bb20ad99478d491597030f92f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.693085
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fca88f9bb20ad99478d491597030f92f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fca88f9bb20ad99478d491597030f92f,
         type: 3}
@@ -183,6 +193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small - Pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fca88f9bb20ad99478d491597030f92f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fca88f9bb20ad99478d491597030f92f,
         type: 3}
