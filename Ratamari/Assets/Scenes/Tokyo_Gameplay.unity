@@ -21395,8 +21395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce31610b7185744087e8679e4d55acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallPropDistance: 150
-  bigPropDistance: 250
+  smallPropDistance: 100
+  bigPropDistance: 200
   endGoalPropDistance: 3500
 --- !u!1 &1087356016
 GameObject:
