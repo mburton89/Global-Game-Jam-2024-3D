@@ -24,6 +24,7 @@ public class BallMovement : MonoBehaviour
 
     public bool isGrounded;
     public bool movedForward;
+   
 
     float moveInput;
 
@@ -35,7 +36,7 @@ public class BallMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         initialBallRadius = GetComponent<SphereCollider>().radius;
-        currentBallSize = 1;
+        currentBallSize = 4;
 
     }
 
@@ -119,7 +120,7 @@ public class BallMovement : MonoBehaviour
             AudioClip clip = collision.gameObject.GetComponent<PropCollider>().CollectableSoundToPlay;
             SoundManager.Instance.PlayAudioClip(clip);
 
-            if (lastZVelocity >= 10)
+            if (lastZVelocity >= 10 )
             {
                 // kick off props from ball on crash based on how impactful the crash was
                 float totalPropSize = 0;
