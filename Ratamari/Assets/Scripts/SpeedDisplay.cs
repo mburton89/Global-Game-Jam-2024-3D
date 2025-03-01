@@ -6,15 +6,16 @@ public class SpeedDisplay : MonoBehaviour
 {
     public Rigidbody rb;
     public TextMeshProUGUI speedText;
+    public int speed;
 
     [HideInInspector] public int highestSpeedThisSession;
 
-    void Update()
+    public void Update()
     {
         // Calculate the speed magnitude and convert it to one decimal place
         //float speed = Mathf.Round(rb.velocity.magnitude * 10f) / 10f;
 
-        int speed = Mathf.RoundToInt(rb.velocity.magnitude);
+        speed = Mathf.RoundToInt(rb.velocity.magnitude);
 
         if (speed > highestSpeedThisSession)
         { 
