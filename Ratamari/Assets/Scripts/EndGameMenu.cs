@@ -17,7 +17,7 @@ public class EndGameMenu : MonoBehaviour
     public TextMeshProUGUI bestText;
 
     int sizePoints;
-    int speedPoints;
+    public int  speedPoints;
     int distancePoints;
     [HideInInspector] public int roadBlocksPoints;
     int totalPoints;
