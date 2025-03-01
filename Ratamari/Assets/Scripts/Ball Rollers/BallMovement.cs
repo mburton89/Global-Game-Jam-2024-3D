@@ -46,7 +46,11 @@ public class BallMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.AddForce(Vector3.forward * initialSpeed, ForceMode.Impulse);
-            gameInstructions.currentInstruct.SetActive(false);
+            if (gameInstructions != null) {
+                gameInstructions.currentInstruct.SetActive(false);
+            }
+
+            
         }
 
         if (moveInput != 0)

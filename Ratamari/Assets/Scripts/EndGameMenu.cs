@@ -17,7 +17,7 @@ public class EndGameMenu : MonoBehaviour
     public TextMeshProUGUI bestText;
 
     int sizePoints;
-    int speedPoints;
+    public int  speedPoints;
     int distancePoints;
     [HideInInspector] public int roadBlocksPoints;
     int totalPoints;
@@ -32,6 +32,7 @@ public class EndGameMenu : MonoBehaviour
     public Image endGameImage;
 
     public Sprite badEnding;
+    public Sprite badTokyoEnding;
     public Sprite medEnding;
     public Sprite goodSanFranEnding;
     public Sprite goodTokyoEnding;
@@ -120,7 +121,17 @@ public class EndGameMenu : MonoBehaviour
     {
         if (distance <= 300)
         {
-            endGameImage.sprite = badEnding;
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                endGameImage.sprite = badTokyoEnding;
+            }
+            else
+            {
+                endGameImage.sprite = badEnding;
+                
+            }
+
+            
         }
         else if (distance > 300 || distance <= 650)
         {

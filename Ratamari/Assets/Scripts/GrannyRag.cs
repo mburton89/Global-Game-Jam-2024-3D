@@ -28,7 +28,7 @@ public class GrannyRag : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("OnCollisionEnter");
+        //print("OnCollisionEnter");
         EnableRagdoll(collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
         GrannyIdle.gameObject.GetComponent<Animator>().enabled = false;
 /*        GetComponent<Rigidbody>().AddForce(Vector3.forward * 200);
@@ -41,7 +41,7 @@ public class GrannyRag : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Granny OnTriggerEnter");
+        //print("Granny OnTriggerEnter");
     }
 
     private void DisableRagdoll()
@@ -92,13 +92,13 @@ public class GrannyRag : MonoBehaviour
             collider.isTrigger = true;
         }
 
-        print("DisableColliders");
+        //print("DisableColliders");
 
-        Destroy(GetComponent<Rigidbody>());
+        //Destroy(GetComponent<Rigidbody>());
 
-        foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
-        {
-            Destroy(rb);
-        }
+        //foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
+        //{
+        //    Destroy(rb);
+        //}
     }
 }

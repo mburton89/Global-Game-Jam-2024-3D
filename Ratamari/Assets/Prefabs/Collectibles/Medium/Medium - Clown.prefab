@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -6954513441619805805}
   - component: {fileID: 4774426727707582742}
   - component: {fileID: -8191823073055650606}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Medium - Clown
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -187,10 +187,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1f4f47fff67591441ad0deda55be27c1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1f4f47fff67591441ad0deda55be27c1,
         type: 3}
       propertyPath: m_Name
       value: EsposoTheClown
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f4f47fff67591441ad0deda55be27c1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

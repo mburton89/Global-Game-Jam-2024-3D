@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9133723564817484537}
   - component: {fileID: 8427607505151718937}
   - component: {fileID: 9058160852672653507}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Large - Taxi
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -193,6 +193,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Taxi_texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2ff2d7e6780645943b10d305e63a213c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8187763976473509416, guid: 2ff2d7e6780645943b10d305e63a213c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

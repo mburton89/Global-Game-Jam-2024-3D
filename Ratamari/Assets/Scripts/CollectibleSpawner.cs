@@ -33,7 +33,8 @@ public class CollectibleSpawner : MonoBehaviour
 
             Vector3 spawnPos = new Vector3(randX, yPos, randZ);
 
-            Instantiate(collectibleToSpawn, spawnPos, transform.rotation, collectibleParent);
+            var prop = Instantiate(collectibleToSpawn, spawnPos, transform.rotation, collectibleParent);
+            
         }
 
         collectibleParent.eulerAngles = new Vector3 (angleToTiltParent, 0, 0);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7649996879638772753}
   - component: {fileID: 5584451737998009119}
   - component: {fileID: 3320475385134651343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collectible - Blue
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -118,7 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fd22cd315ec1c4ebaba7f328d45645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propSize: 0
-  propSizeTier: 0
+  propValue: 0
   pickedUp: 0
+  CollectableSoundToPlay: {fileID: 0}
+  isRat: 0
   size: 2
