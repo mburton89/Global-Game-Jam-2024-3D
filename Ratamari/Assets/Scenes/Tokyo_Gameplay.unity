@@ -19285,9 +19285,10 @@ MonoBehaviour:
   languageButton: {fileID: 2074352761}
   endGameImage: {fileID: 1056171819}
   badEnding: {fileID: 21300000, guid: 644ec3a8c92e8a140809ad7cb549fe6b, type: 3}
+  badTokyoEnding: {fileID: 21300000, guid: 164f8886ecd1b324c8bcc49bdca51053, type: 3}
   medEnding: {fileID: 21300000, guid: ca62c26333e86944dad89e6cdbba3297, type: 3}
   goodSanFranEnding: {fileID: 21300000, guid: ffe25a073e26f6940b2dfe9c9cc3352f, type: 3}
-  goodTokyoEnding: {fileID: 21300000, guid: 1aad54899cf6a3549a733f179adc871d, type: 3}
+  goodTokyoEnding: {fileID: 21300000, guid: 4619c45890480df48b3acc84514bebe0, type: 3}
 --- !u!4 &1691614633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2660613026671487275, guid: f67a2ad527e41294ab256a90ea4565cb,
@@ -24028,14 +24029,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ratPortrait: {fileID: 1129416243}
   speedIndicator: 0
-  lowSpeedlevel: 10
-  medSpeedlevel: 25
-  highSpeedlevel: 40
+  lowSpeedlevel: 20
+  medSpeedlevel: 50
+  highSpeedlevel: 70
   rb: {fileID: 1214782498}
-  slowSpeedPortrait: {fileID: 21300000, guid: e8a19d73d2786874696fed6b505dcd4f, type: 3}
-  mediumSpeedPortrait: {fileID: 21300000, guid: 538f714318fd4c941b46d6ad760d280c,
+  slowSpeedPortrait: {fileID: 21300000, guid: f4032f018f0d0eb45931a891b3d6b375, type: 3}
+  mediumSpeedPortrait: {fileID: 21300000, guid: 03f3b7a40a26104468ef672d7f4f9155,
     type: 3}
-  fastSpeedPortrait: {fileID: 21300000, guid: 9e45c693b70de53489edb4da4f56a16e, type: 3}
+  fastSpeedPortrait: {fileID: 21300000, guid: d2f28703c4a9c7a4bafba50e51f7172e, type: 3}
 --- !u!224 &2032168271
 RectTransform:
   m_ObjectHideFlags: 0

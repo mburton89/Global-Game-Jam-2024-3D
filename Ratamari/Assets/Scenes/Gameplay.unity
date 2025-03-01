@@ -11461,14 +11461,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ratPortrait: {fileID: 1748491725}
   speedIndicator: 0
-  lowSpeedlevel: 10
-  medSpeedlevel: 25
-  highSpeedlevel: 40
+  lowSpeedlevel: 20
+  medSpeedlevel: 50
+  highSpeedlevel: 70
   rb: {fileID: 1214782498}
-  slowSpeedPortrait: {fileID: 21300000, guid: e8a19d73d2786874696fed6b505dcd4f, type: 3}
-  mediumSpeedPortrait: {fileID: 21300000, guid: 538f714318fd4c941b46d6ad760d280c,
+  slowSpeedPortrait: {fileID: 21300000, guid: 36171a396d4efbd49b1581aa02afd09c, type: 3}
+  mediumSpeedPortrait: {fileID: 21300000, guid: b39044085fd72a04c96f7219016e6666,
     type: 3}
-  fastSpeedPortrait: {fileID: 21300000, guid: 9e45c693b70de53489edb4da4f56a16e, type: 3}
+  fastSpeedPortrait: {fileID: 21300000, guid: d64ce9d36b5266248865dc7bda95ad04, type: 3}
 --- !u!1001 &269309335
 PrefabInstance:
   m_ObjectHideFlags: 0
