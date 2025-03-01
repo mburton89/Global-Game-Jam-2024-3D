@@ -92,13 +92,13 @@ public class GrannyRag : MonoBehaviour
             collider.isTrigger = true;
         }
 
-        print("DisableColliders");
+        //print("DisableColliders");
 
-        Destroy(GetComponent<Rigidbody>());
+        //Destroy(GetComponent<Rigidbody>());
 
-        foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
-        {
-            Destroy(rb);
-        }
+        //foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
+        //{
+        //    Destroy(rb);
+        //}
     }
 }
