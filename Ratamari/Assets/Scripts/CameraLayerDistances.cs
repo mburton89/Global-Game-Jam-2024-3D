@@ -8,17 +8,23 @@ public class CameraLayerDistances : MonoBehaviour
     public float bigPropDistance = 300f;
     public float endGoalPropDistance = 1000f;
 
-    Camera camera;
-
-
     // Start is called before the first frame update
     void Start()
     {
-        camera = GetComponent<Camera>();
+        SetDistances();
+    }
+
+    private void OnValidate()
+    {
+        SetDistances();
+    }
+
+    void SetDistances()
+    {
         float[] distances = new float[32];
         distances[6] = endGoalPropDistance;
         distances[8] = smallPropDistance;
         distances[9] = bigPropDistance;
-        camera.layerCullDistances = distances;
+        Camera.main.layerCullDistances = distances;
     }
 }
