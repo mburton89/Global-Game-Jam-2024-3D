@@ -44644,12 +44644,12 @@ MonoBehaviour:
   - {fileID: 2273661107012234933, guid: b79ae2ca983489648afb88f9c3b2c474, type: 3}
   - {fileID: 9160417497418741624, guid: 377e3eb564687274b8962e43b5001e5f, type: 3}
   - {fileID: 6511580949881817191, guid: c9356e9373fffce4cb2e4a11e07602a2, type: 3}
-  - {fileID: 6511580949881817191, guid: d47f1eefd1006dc43baba48ceb3621a5, type: 3}
+  - {fileID: 4347033998788511049, guid: 41e65507e72ec8741ad538377bbb0e1e, type: 3}
   - {fileID: 4347033998788511049, guid: 41e65507e72ec8741ad538377bbb0e1e, type: 3}
   - {fileID: 4347033998788511049, guid: d58a8508cf45a224c9c7550d619e4d10, type: 3}
   - {fileID: 2273661107012234933, guid: 8193d18460ae0904dbc636a5525cc6eb, type: 3}
-  - {fileID: 6511580949881817191, guid: 3e20ce8912a747b4bbf387867c4498a3, type: 3}
-  - {fileID: 6511580949881817191, guid: 5dde81c7975076444a3c73b19110ebbe, type: 3}
+  - {fileID: 4347033998788511049, guid: 7a8e2f70c9e09014a927f3c6895d1d3f, type: 3}
+  - {fileID: 2273661107012234933, guid: 3b448e6ae5acdf243858ad97ab60aab2, type: 3}
   - {fileID: 6511580949881817191, guid: fec334a9281db3944927aa516a3491d9, type: 3}
   - {fileID: 6511580949881817191, guid: 4d60eab9b9e99a140951ba14c8557508, type: 3}
   - {fileID: 3461471023039124130, guid: 4433324bb167ccc44819269fafe2c99a, type: 3}
@@ -44827,16 +44827,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AchievementManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6434050094370766910, guid: a9bc36f5f86478648b71dae6e34f11c6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7611181586639562602, guid: a9bc36f5f86478648b71dae6e34f11c6,
-        type: 3}
-      propertyPath: achievementButton
-      value: 
-      objectReference: {fileID: 1114971742}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
