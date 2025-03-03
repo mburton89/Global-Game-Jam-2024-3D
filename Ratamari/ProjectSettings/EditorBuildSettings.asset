@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Build Scenes/MainMenu.unity
     guid: 2c4db4216947ab94280137ac11f17cac
   - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
+    path: Assets/Scenes/GameplayScenes/Gameplay.unity
     guid: db50e81a2262c744d96265bc38cea4f8
   - enabled: 1
-    path: Assets/Scenes/Tokyo_Gameplay.unity
+    path: Assets/Scenes/GameplayScenes/Tokyo_Gameplay.unity
     guid: 8993de67fea96a8409b2cc5227e759a2
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c638fddd49b64754e98cd012f385b772,
