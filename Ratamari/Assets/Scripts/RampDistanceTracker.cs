@@ -11,7 +11,6 @@ public class RampDistanceTracker : MonoBehaviour
 
     private bool shouldTrackDistance = true;
 
-
     void Update()
     {
         if (distanceTraveled < 1)

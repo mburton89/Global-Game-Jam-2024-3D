@@ -29,6 +29,8 @@ public class EndGameMenu : MonoBehaviour
     public GameObject languageMenuContainer;
     public Button languageButton;
 
+    public GameObject achievementButton;
+
     public Image endGameImage;
 
     public Sprite badEnding;
@@ -36,6 +38,10 @@ public class EndGameMenu : MonoBehaviour
     public Sprite medEnding;
     public Sprite goodSanFranEnding;
     public Sprite goodTokyoEnding;
+
+    private const int DISTANCE_ACH_1 = 150;
+    private const int DISTANCE_ACH_2 = 300;
+    private const int DISTANCE_ACH_3 = 500;
 
     void Awake()
     {
@@ -117,8 +123,30 @@ public class EndGameMenu : MonoBehaviour
         languageMenuContainer.SetActive(true);
     }
 
+    void ShowAchievementButton()
+    {
+        achievementButton.SetActive(true);
+    }
+
     public void DetermineEndScreen(float distance)
     {
+        ShowAchievementButton();
+
+        if (distance >= DISTANCE_ACH_1)
+        {
+            UnlockDistanceAchievement1();
+        }
+
+        if (distance >= DISTANCE_ACH_2 && AchievementManager.Instance.CheckIfAchievementUnlocked("001"))
+        {
+            UnlockDistanceAchievement2();
+        }
+
+        if (distance >= DISTANCE_ACH_3 && AchievementManager.Instance.CheckIfAchievementUnlocked("002"))
+        {
+            UnlockDistanceAchievement3();
+        }
+
         if (distance <= 300)
         {
             if (SceneManager.GetActiveScene().buildIndex == 3)
@@ -148,5 +176,20 @@ public class EndGameMenu : MonoBehaviour
                 endGameImage.sprite = goodSanFranEnding;
             }
         }
+    }
+
+    private void UnlockDistanceAchievement1()
+    {
+        AchievementManager.Instance.UnlockAchievement("001");
+    }
+
+    private void UnlockDistanceAchievement2()
+    {
+        AchievementManager.Instance.UnlockAchievement("002");
+    }
+
+    private void UnlockDistanceAchievement3()
+    {
+        AchievementManager.Instance.UnlockAchievement("003");
     }
 }
