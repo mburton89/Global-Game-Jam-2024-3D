@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ade14d596a1848a4ba0fead939d69d75
   m_SerializeEntries:
-  - m_GUID: c3fd465d51edfd842abc05c94ed770ee
-    m_Address: English (en)
+  - m_GUID: 4b11908ec846e744cbe5c8b0518b2cfb
+    m_Address: Japanese (ja)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
@@ -35,8 +35,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4b11908ec846e744cbe5c8b0518b2cfb
-    m_Address: Japanese (ja)
+  - m_GUID: c3fd465d51edfd842abc05c94ed770ee
+    m_Address: English (en)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
