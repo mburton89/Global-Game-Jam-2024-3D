@@ -22,6 +22,7 @@ public class RunningRat : MonoBehaviour
     {
         transform.position = new Vector3(ball.transform.position.x, ball.transform.position.y + yOffset, ball.transform.position.z);
         animator.speed = ball.GetComponent<Rigidbody>().velocity.magnitude / 20f;
+        
     }
 
     public void MoveUp()

@@ -21,12 +21,12 @@ public class RampDistanceTracker : MonoBehaviour
         else
         {
             distanceText.transform.transform.localScale = Vector3.one;
+            PortraitManager.Instance.InAirFace();
             label.localScale = Vector3.one;
         }
 
         if (shouldTrackDistance)
         {
-
             distanceTraveled = Mathf.Max(0f, transform.position.z - targetSpot.position.z);
 
             int distanceTraveledInt = (int)distanceTraveled;

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2004297246417846113}
   - component: {fileID: -7914948022295827332}
   - component: {fileID: 8533961662423085065}
+  - component: {fileID: 8699389698383984047}
   m_Layer: 9
   m_Name: Medium - Leon
   m_TagString: Prop
@@ -164,6 +165,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b2cdc1efae74464299bd2bab38e96fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8699389698383984047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511580949881817191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da68be7921edea4489ed5a9f9cb70d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1723155861214689009

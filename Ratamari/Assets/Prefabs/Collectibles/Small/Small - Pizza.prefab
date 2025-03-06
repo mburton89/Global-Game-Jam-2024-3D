@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1275409516926357965}
   - component: {fileID: 3936631115416155493}
   - component: {fileID: -9155835232527662604}
+  - component: {fileID: 4026676927599539762}
   m_Layer: 8
   m_Name: Small - Pizza
   m_TagString: Prop
@@ -124,6 +125,18 @@ MonoBehaviour:
   CollectableSoundToPlay: {fileID: 0}
   isRat: 0
   size: 0
+--- !u!114 &4026676927599539762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273661107012234933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0561ab2cce051f4469c12f7adc68fc23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4971513738445146615
 PrefabInstance:
   m_ObjectHideFlags: 0

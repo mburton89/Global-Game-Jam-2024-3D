@@ -8,6 +8,7 @@ TagManager:
   - Ratball
   - Target
   - Roadblock
+  - Ramp
   layers:
   - Default
   - TransparentFX

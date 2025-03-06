@@ -62,6 +62,7 @@ public class BallMovement : MonoBehaviour
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput * 4), rb.velocity.y, rb.velocity.z);
         currentZVelocity = rb.velocity.z;
         lastZVelocity = rb.velocity.z;
+        
     }
 
     public void Jump()

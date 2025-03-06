@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3245761725856547177}
   - component: {fileID: 3285987466864708133}
   - component: {fileID: 378228229680841493}
+  - component: {fileID: -4951333798106635873}
   m_Layer: 9
   m_Name: Large - Truck
   m_TagString: Prop
@@ -73,6 +74,18 @@ MonoBehaviour:
     type: 3}
   isRat: 0
   size: 2
+--- !u!114 &-4951333798106635873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481623009137538507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d61769ea06fe95418d96f489d000dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8417572183384374869
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2535363544294791040}
   - component: {fileID: 8281960276069391774}
   - component: {fileID: 1380834357241030394}
+  - component: {fileID: 7150158603932904023}
   m_Layer: 9
   m_Name: Large - Sedan
   m_TagString: Prop
@@ -73,6 +74,18 @@ MonoBehaviour:
     type: 3}
   isRat: 0
   size: 2
+--- !u!114 &7150158603932904023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572232912900036630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d61769ea06fe95418d96f489d000dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7039490125447150102
 PrefabInstance:
   m_ObjectHideFlags: 0

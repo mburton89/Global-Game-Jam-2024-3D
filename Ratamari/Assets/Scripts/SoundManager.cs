@@ -194,6 +194,7 @@ public class SoundManager : MonoBehaviour
 
         else if (soundEffect == SoundEffect.CarHornSound)
         {
+            PortraitManager.Instance.HitCarFace();
             audioSourceToPlay = carHornSounds[carHornSoundIndex];
             if (carHornSoundIndex < carHornSounds.Count - 1)
             {
@@ -207,6 +208,7 @@ public class SoundManager : MonoBehaviour
 
         else if (soundEffect == SoundEffect.RoadBlockSound)
         {
+            PortraitManager.Instance.HitRoadblockFace();
             audioSourceToPlay = roadBlockSounds[roadBlockSoundIndex];
             if (roadBlockSoundIndex < roadBlockSounds.Count - 1)
             {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6953097756949800531}
   - component: {fileID: 6077994330158900399}
   - component: {fileID: 1258188259391781773}
+  - component: {fileID: -6147741594221780072}
   m_Layer: 9
   m_Name: Large - Trueno
   m_TagString: Prop
@@ -125,6 +126,18 @@ MonoBehaviour:
     type: 3}
   isRat: 0
   size: 2
+--- !u!114 &-6147741594221780072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461471023039124130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d61769ea06fe95418d96f489d000dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7056650922386344106
 PrefabInstance:
   m_ObjectHideFlags: 0

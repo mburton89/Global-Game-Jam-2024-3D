@@ -8,6 +8,9 @@ public class SpeedDisplay : MonoBehaviour
     public TextMeshProUGUI speedText;
     public int speed;
 
+    public int slowSpeed = 20;
+    public int fastSpeed = 45;
+
     [HideInInspector] public int highestSpeedThisSession;
 
     public void Update()
@@ -20,6 +23,22 @@ public class SpeedDisplay : MonoBehaviour
         if (speed > highestSpeedThisSession)
         { 
             highestSpeedThisSession = speed;
+        }
+
+        if (PortraitManager.Instance.importantFaceEvent == false)
+        {
+            if (speed < slowSpeed)
+            {
+                PortraitManager.Instance.NeutralFace();
+            }
+            else if (speed > slowSpeed && speed < fastSpeed)
+            {
+                PortraitManager.Instance.GoingSlow();
+            }
+            else if (speed > fastSpeed)
+            {
+                PortraitManager.Instance.GoingFast();
+            }
         }
 
         // Display the speed in the UI text
