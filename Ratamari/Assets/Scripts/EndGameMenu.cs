@@ -43,6 +43,8 @@ public class EndGameMenu : MonoBehaviour
     private const int DISTANCE_ACH_2 = 300;
     private const int DISTANCE_ACH_3 = 500;
 
+    bool hasActivated;
+
     void Awake()
     {
         Instance = this;
@@ -55,6 +57,10 @@ public class EndGameMenu : MonoBehaviour
 
     public void Activate()
     {
+        if (hasActivated) return;
+
+        hasActivated = true;
+
         container.SetActive(true);
         //container.transform.localScale = Vector3.one;
         retryButton.gameObject.SetActive(false);
@@ -161,11 +167,11 @@ public class EndGameMenu : MonoBehaviour
 
             
         }
-        else if (distance > 300 || distance <= 650)
+        else if (distance > 300 && distance <= 650)
         {
             endGameImage.sprite = medEnding;
         }
-        else
+        else 
         {
             if (SceneManager.GetActiveScene().buildIndex == 3)
             {
