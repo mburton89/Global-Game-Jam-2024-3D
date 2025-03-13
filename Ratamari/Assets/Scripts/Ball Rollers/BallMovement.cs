@@ -59,9 +59,9 @@ public class BallMovement : MonoBehaviour
         }
         //Jump();
 
-        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput * 4), rb.velocity.y, rb.velocity.z);
-        currentZVelocity = rb.velocity.z;
-        lastZVelocity = rb.velocity.z;
+        rb.linearVelocity = new Vector3(Mathf.Clamp(rb.linearVelocity.x, -maxMoveSpeed, maxMoveSpeed) + (moveInput * 4), rb.linearVelocity.y, rb.linearVelocity.z);
+        currentZVelocity = rb.linearVelocity.z;
+        lastZVelocity = rb.linearVelocity.z;
         
     }
 
@@ -71,12 +71,12 @@ public class BallMovement : MonoBehaviour
         {
             if (currentJumps > 0)
             {
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
                 currentJumps--;
             }
         }
 
-        if (rb.velocity.y <= 0)
+        if (rb.linearVelocity.y <= 0)
         {
             CheckIfGrounded();
         }
@@ -196,7 +196,7 @@ public class BallMovement : MonoBehaviour
                 }
                 collision.gameObject.GetComponent<Rigidbody>().useGravity = true;
                 collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 1000 * rb.velocity.z);
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 1000 * rb.linearVelocity.z);
 
 /*                if (collision.gameObject.GetComponent<GrannyRag>())
                 {

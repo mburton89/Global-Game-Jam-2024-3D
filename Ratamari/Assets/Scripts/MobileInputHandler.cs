@@ -62,7 +62,7 @@ public class MobileInputHandler : MonoBehaviour
         }
 
         // Apply the velocity to the Rigidbody
-        rb.velocity = new Vector3(xVelocity, rb.velocity.y, rb.velocity.z);
+        rb.linearVelocity = new Vector3(xVelocity, rb.linearVelocity.y, rb.linearVelocity.z);
 
         if (Input.GetMouseButtonDown(0))
         {

@@ -12,7 +12,7 @@ public class RoadBlock : MonoBehaviour
         {
             for (int i = 0; i < roadBlockPieces.Count; i++) 
             {
-                roadBlockPieces[i].Activate(other.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
+                roadBlockPieces[i].Activate(other.gameObject.GetComponent<Rigidbody>().linearVelocity.magnitude);
             }
 
             if (SoundManager.Instance != null)

@@ -187,10 +187,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5024095495618607958, guid: 499925ccb57e67643942908f1022a391,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -999436974913482922, guid: 499925ccb57e67643942908f1022a391,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 499925ccb57e67643942908f1022a391,
         type: 3}
       propertyPath: m_Name
       value: Ratamari dopey cat L
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 499925ccb57e67643942908f1022a391,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818862950612305880, guid: 499925ccb57e67643942908f1022a391,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

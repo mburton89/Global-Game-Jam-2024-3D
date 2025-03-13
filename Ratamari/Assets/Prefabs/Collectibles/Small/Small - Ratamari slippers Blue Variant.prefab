@@ -73,10 +73,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8634388854126915276, guid: 052b5d7e1fb69ae42b6a919b37746dba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4292344238743818211, guid: 052b5d7e1fb69ae42b6a919b37746dba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 052b5d7e1fb69ae42b6a919b37746dba,
         type: 3}
       propertyPath: m_Name
       value: Small - Ratamari slippers Blue Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 052b5d7e1fb69ae42b6a919b37746dba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

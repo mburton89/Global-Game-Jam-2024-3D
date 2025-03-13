@@ -29,7 +29,7 @@ public class GrannyRag : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //print("OnCollisionEnter");
-        EnableRagdoll(collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude);
+        EnableRagdoll(collision.gameObject.GetComponent<Rigidbody>().linearVelocity.magnitude);
         GrannyIdle.gameObject.GetComponent<Animator>().enabled = false;
 /*        GetComponent<Rigidbody>().AddForce(Vector3.forward * 200);
 

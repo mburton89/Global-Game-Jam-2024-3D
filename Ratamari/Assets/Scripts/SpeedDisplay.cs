@@ -18,7 +18,7 @@ public class SpeedDisplay : MonoBehaviour
         // Calculate the speed magnitude and convert it to one decimal place
         //float speed = Mathf.Round(rb.velocity.magnitude * 10f) / 10f;
 
-        speed = Mathf.RoundToInt(rb.velocity.magnitude);
+        speed = Mathf.RoundToInt(rb.linearVelocity.magnitude);
 
         if (speed > highestSpeedThisSession)
         { 
